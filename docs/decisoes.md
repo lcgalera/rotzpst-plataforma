@@ -85,3 +85,24 @@ Teste em protótipos equivalentes: mesma geometria, mesmas cores, seleção por 
 - **Política e Geopolítica:** abas com estado vazio honesto até a Fase 3 (notícias).
 - **Acessibilidade:** axe-core (WCAG 2.1 AA + boas práticas) deu **0 violações** em `/`, `/explorar` (globo e mapa plano), `/paises`, `/pais/brasil`, `/pais/india` e `/design`. As abas seguem o padrão WAI-ARIA (setas, Home, End).
 - **Rota 404 em streaming:** um slug inexistente devolve status 200 com a página "não encontrada" e `noindex`. É o comportamento do Next com streaming; para SEO, o `noindex` resolve.
+
+## 2026-11-09 · Fase 3: notícias e IA (aprovadas pelo dono)
+
+- **Fontes de notícia: Agência Brasil + GDELT.**
+  - **Agência Brasil** é a base do texto. Política de reprodução lida em [agenciabrasil.ebc.com.br/sobre](https://agenciabrasil.ebc.com.br/sobre): reprodução autorizada para veículos de comunicação com fins jornalísticos, com indicação da fonte; **uso comercial exige contato** com licenciamento@ebc.com.br (rever antes de monetizar, Fase 6).
+  - **Exclusões na coleta:** os feeds misturam material de parceiros, por exemplo um texto da Reuters marcado "É proibida a reprodução deste conteúdo". A coleta exclui, com motivo registrado, itens "proibida a reprodução", de autor de agência parceira, ou "com informações da/de" agência parceira (Reuters, Lusa, AFP, EFE…).
+  - **GDELT** fica como complemento (outras coberturas, só título + link). Deste ambiente, todas as consultas foram recusadas por limite de requisições, provavelmente porque o IP de saída é compartilhado. Integração adiada até poder testar de um servidor próprio.
+- **O texto integral fica só no banco, para uso interno da análise. Nunca é exibido.** Os lotes em `data/lotes/` estão no `.gitignore`. No site aparecem título, link, resumo próprio e citações curtas (até 30 palavras cada, no máximo 3 por bloco).
+- **IA sem gasto extra:** o dono tem Claude Pro (sem créditos de API) e Google AI Pro (a assinatura não cobre a Gemini API; o Gemini 4 Argon não tem camada gratuita na API). Decisão:
+  - **Provedor padrão `agente-claude-code`:** o agente do Claude Code processa os lotes dentro da assinatura. Hoje roda na sessão interativa; depois, como tarefa agendada, quando houver repositório e banco hospedados. Custo de API: zero. Consome o limite da assinatura: o dono atingiu o limite uma vez durante esta fase.
+  - **`anthropic-api` e `gemini-api` desligados** (`news/analise/provedores.py`). Nenhum código de SDK do Gemini foi escrito, porque a documentação oficial (ai.google.dev) não pôde ser lida deste ambiente. A interface é a mesma (`lote.json` → `lote.resultado.json`), então ligar e comparar depende só de você decidir pagar, com um teto.
+- **Sem agente autônomo por notícia:** a tarefa é fechada (texto → JSON com campos fixos). Usamos instruções fixas (`news/analise/instrucoes.md`) + esquema JSON + validador.
+- **Anti-alucinação, em camadas:**
+  1. Cada bloco (fato, interpretação, impacto) precisa de 1 a 3 citações **literais**. O validador confere cada trecho contra o texto da fonte (ignorando só aspas tipográficas, travessões e espaços).
+  2. O texto próprio não pode copiar mais de 12 palavras seguidas da fonte, para não republicar.
+  3. Interpretação e impacto ficam `null` quando o texto não dá base.
+  4. Países só da base ISO; temas só `economia`, `politica`, `geopolitica`.
+  5. O que reprova no validador entra como `rejeitada` e nunca chega à revisão.
+- **Revisão humana obrigatória:** painel `/revisao` com Basic Auth (usuário `revisor`, senha em `REVISAO_SENHA`; sem senha o painel fica fechado). A credencial é conferida de novo dentro da server action, porque o `proxy` do Next é só uma checagem otimista. Só análises **aprovadas** aparecem no site, com o rótulo "Resumo gerado por IA e revisado por uma pessoa" e link para o original.
+- **Taxa de erro:** medida na revisão humana, com categorias de erro marcáveis inclusive ao aprovar. O relatório `docs/taxa-erro-ia.md` usa intervalo de Wilson de 95% e avisa quando a amostra tem menos de 20 revisões. Publicação automática só depois de medir (PLANO §6).
+- **Agrupamento por evento:** semelhança de títulos (Jaccard ≥ 0,5 em até 72 h). Simples de propósito; a revisão pega o que escapar.

@@ -101,6 +101,17 @@ Piloto testado: 19 países do G20 + 8 vizinhos do Brasil fora do G20 (Argentina 
 - **Licença:** os registros SGS no portal de dados abertos do BCB indicam ODbL ([exemplo de catálogo](https://dadosabertos.bcb.gov.br/zh_Hant_TW/dataset/29004-sgs/resource/a2fd19ab-75d7-4900-91f0-66fb4c58ab46)). O portal `dadosabertos.bcb.gov.br` não é acessível deste ambiente.
 - Códigos de séries específicas (ex.: Selic) **a confirmar** no catálogo antes de usar.
 
+## Notícias
+
+| Fonte | Uso | Formato | Licença/termos | Status |
+|---|---|---|---|---|
+| Agência Brasil (EBC) | Texto-base das análises | RSS 2.0 por editoria: `https://agenciabrasil.ebc.com.br/rss/{economia,politica,internacional}/feed.xml` (lista oficial em `https://rss.ebc.com.br`) | Reprodução autorizada para fins jornalísticos com indicação da fonte; uso comercial exige contato com a EBC; conteúdo de agências parceiras fora da regra ([política](https://agenciabrasil.ebc.com.br/sobre)) | **Em uso** |
+| GDELT DOC 2.0 API | Outras coberturas (título + link) | JSON, `https://api.gdeltproject.org/api/v2/doc/doc` | Indexa só metadados; o direito sobre o texto é do veículo. Termos oficiais não localizados | Adiado: limite de **1 requisição a cada 5 s** (mensagem da própria API); todas as tentativas deste ambiente foram recusadas |
+| UN News | — | — | Exige reprodução integral e sem edição ([termos](https://www.un.org/en/about-us/copyright/)), incompatível com resumo próprio | Não usada |
+
+- Cada item do RSS traz título, link, data, autor (`dc:creator`), editorias e o texto completo em HTML (`description`).
+- Os feeds incluem material de parceiros (Reuters etc.); ver as regras de exclusão em `ingest/news/agencia_brasil.py`.
+
 ## Geometrias, códigos e nomes
 
 - **Natural Earth:** [termos de uso](https://www.naturalearthdata.com/about/terms-of-use/), domínio público, crédito opcional ("Made with Natural Earth"). Fronteiras **de facto**.
