@@ -42,3 +42,46 @@ Formato: data · decisão · motivo · como reverter. Decisões marcadas [DECIS�
 - **Palestina:** "Palestina" (ISO: "Palestina, Estado da").
 - **Malvinas/Falkland:** mantida a forma ISO pt_BR "Ilhas Malvinas (Falkland)", que registra os dois nomes.
 - **Geometrias:** Natural Earth 4.1.0 (fronteiras de facto), 1:50m e 1:110m em `data/geo/`. Kosovo, Chipre do Norte e Somalilândia têm feição no mapa, mas sem código ISO, então não se ligam a nenhuma página de país. Como exibir essas feições é decisão da Fase 2.
+
+## 2026-11-09 · Fase 2: globo
+
+**Decisão: MapLibre GL 6.17 (projeção globo), sem tiles externos.** As geometrias (Natural Earth 1:110m) vêm do próprio site (`/geo/`), então não há custo de licença nem dependência de servidor de mapas.
+
+Teste em protótipos equivalentes: mesma geometria, mesmas cores, seleção por clique e rotação. Feito em Chromium headless com renderização WebGL por software (SwiftShader), 3 rodadas por motor, viewport 1280×900.
+
+| Critério | MapLibre 6.17 | globe.gl 2.46 |
+|---|---|---|
+| Tempo até o 1º quadro com países | 429–446 ms | 511–582 ms |
+| Quadros por segundo girando (5 s) | 16,4–16,9 | 8,2–8,8 |
+| JS transferido na página (gzip, inclui o Next) | 416 KB | 681 KB |
+| Teclado | setas giram, +/− aproximam (nativo) | nenhum |
+| Visual | plano, sem brilho (`atmosphere-blend: 0`) | sombreamento 3D (gradiente), contra o "sem brilho" do design |
+
+- **Ressalva:** o FPS absoluto não representa uma máquina real, porque não há GPU no teste. Vale a comparação relativa (≈2× a favor do MapLibre).
+- **Acessibilidade:** nenhum dos dois permite escolher país pelo teclado dentro do canvas. A seleção acessível fica fora do globo: lista de países e mapa plano em SVG, em que cada país do piloto é um link.
+- **Ajustes necessários:**
+  - O worker do MapLibre 6 é servido como arquivo estático versionado (`public/vendor/`, `pnpm vendor`), porque o bundler não o resolve sozinho.
+  - Polígonos que cruzam o antimeridiano (Fiji, Rússia) tiveram as longitudes desdobradas (`desdobrarAnel`), senão aparece uma faixa atravessando o globo.
+- **Cores:** oceano `--cor-areia`, terra `--cor-papel`, países com dados completos `--d-seq-2`, selecionado `--cor-azul-profundo`. O WebGL não lê `var()`, então os tokens são lidos do CSS em tempo de execução.
+- **Carga sob demanda:** o globo só baixa quando o usuário abre a exploração (`next/dynamic`, `ssr: false`).
+- **Coordenada do carregamento:** é o centroide do polígono do Brasil, calculado (`d3.geoCentroid`, Natural Earth 1:110m): **10°39′S 53°10′W**. O valor do exemplo no PLANO-DESIGN (14°14′S 51°55′W) não foi usado porque não tem origem documentada.
+
+## 2026-11-09 · Fase 2: site, componentes e mapas
+
+- **O site lê o Postgres direto no servidor** (`web/src/lib/dados.ts`, biblioteca `postgres`, só leitura) com `'use cache'` + `cacheLife('days')` do Next 16. Toda série sai da view `series_com_fonte`, então nenhum número chega à tela sem fonte e data. As páginas do piloto são geradas no build; as dos demais países são renderizadas na primeira visita e ficam em cache.
+- **CI:** o build do site precisa de banco. O CI sobe um Postgres e carrega `db/seeds/ci.sql`, um recorte **real** (catálogo, 249 países e as séries de Brasil, Índia e Venezuela, que cobrem os casos completo, com lacuna e defasado). O arquivo é gerado por `db/seeds/gerar_semente_ci.sh`.
+- **Gráficos:** SVG próprio com d3-scale e d3-shape. Não uso Observable Plot, que precisa de DOM no servidor. O servidor já entrega o gráfico desenhado; no cliente ele só se ajusta à largura, sem pular layout.
+  - Linha com rótulo direto no último ponto; barras divergentes para crescimento, inflação e balança, a partir de 2000; área para população.
+  - Anos ausentes quebram a linha: o gráfico não "liga os pontos" sobre a lacuna.
+  - Todo gráfico tem tabela alternativa.
+- **Mapa plano:** SVG com projeção Equal Earth (equivalente em área, mais neutra que Mercator), Natural Earth 1:110m, gerado no servidor.
+  - Coroplético em 5 quantis da paleta sequencial; "sem dado" é hachurado (nunca só cor).
+  - Os 27 países do piloto são links navegáveis por teclado.
+  - A Antártida fica de fora, porque ocupa espaço e não tem dados.
+- **Defasagem:** o aviso "dado antigo" (mais de 3 anos) é medido contra a data de atualização da própria fonte, não contra o relógio do visitante. Isso também mantém a página determinística no build.
+- **Variação nos KPIs:** sempre com seta **e** sinal. A cor é neutra, sem verde/vermelho de "bom/ruim", porque inflação e PIB subindo têm sentidos opostos. Se a variação arredonda para zero, aparece "▬ ±0,0", nunca "▼ −0,0".
+- **Bandeiras:** `flag-icons` 7.6.0 (MIT), 250 SVGs copiados para `web/public/flags/`. Exibidas pequenas, ao lado do nome, com `alt` vazio quando o nome já está escrito.
+- **Português sem artigo inventado:** os textos evitam "de {país}", porque o artigo varia (do Brasil, da Índia, dos EUA, de Portugal). Usamos construções como "para este país" e "Ver o panorama completo" até existir uma tabela de artigos revisada.
+- **Política e Geopolítica:** abas com estado vazio honesto até a Fase 3 (notícias).
+- **Acessibilidade:** axe-core (WCAG 2.1 AA + boas práticas) deu **0 violações** em `/`, `/explorar` (globo e mapa plano), `/paises`, `/pais/brasil`, `/pais/india` e `/design`. As abas seguem o padrão WAI-ARIA (setas, Home, End).
+- **Rota 404 em streaming:** um slug inexistente devolve status 200 com a página "não encontrada" e `noindex`. É o comportamento do Next com streaming; para SEO, o `noindex` resolve.

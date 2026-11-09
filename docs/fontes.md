@@ -14,7 +14,7 @@
 | IBGE, SIDRA | Brasil em detalhe | API REST, JSON | Varia por pesquisa | A confirmar | Candidata, fora do núcleo do piloto |
 | Natural Earth (via pacote npm `world-atlas` 2.0.2) | Geometrias de países (globo e mapa) | TopoJSON | Estática (Natural Earth 4.1.0) | Natural Earth: domínio público; pacote: ISC | **Em uso** (`data/geo/`) |
 | `pycountry` (PyPI, dados ISO 3166 do projeto iso-codes) | Lista ISO 3166-1, códigos alfa-2/alfa-3/numérico | Python | A cada release | LGPL 2.1 (usado só como dependência, sem modificar) | **Em uso**, com nomes pt-BR revisados |
-| `flag-icons` (npm 7.6.0) | Bandeiras em SVG | SVG | A cada release | MIT | Proposta para a Fase 2 |
+| `flag-icons` (npm 7.6.0) | Bandeiras em SVG | SVG | A cada release | MIT | **Em uso** (`web/public/flags/`) |
 | PNUD, IDH | IDH | — | Anual | A confirmar | Fora do MVP por ora (host bloqueado) |
 | OCDE, UN Comtrade | — | — | — | — | Não necessárias para o piloto; bloqueadas pela rede |
 
@@ -106,7 +106,7 @@ Piloto testado: 19 países do G20 + 8 vizinhos do Brasil fora do G20 (Argentina 
 - **Natural Earth:** [termos de uso](https://www.naturalearthdata.com/about/terms-of-use/), domínio público, crédito opcional ("Made with Natural Earth"). Fronteiras **de facto**.
 - **`world-atlas` 2.0.2** (npm, ISC): redistribui Natural Earth 4.1.0 em TopoJSON (110m, 50m, 10m). Cada país traz `id` = código ISO 3166-1 **numérico** e `name` em inglês. Em `countries-110m.json` (177 feições), três **não têm código ISO**: Chipre do Norte, Somalilândia e Kosovo.
 - **`pycountry`** 26.2.16 (PyPI, LGPL 2.1): 249 países/territórios ISO 3166-1, com traduções pt_BR. As traduções seguem a forma oficial ISO e **não servem direto para exibição**: por exemplo, "Coreia, República da" e "Taiwan, Província da China" (este último é politicamente carregado). Proposta: tabela própria de `nome_pt` revisada, com decisões registradas em `docs/decisoes.md`.
-- **`flag-icons`** 7.6.0 (npm, MIT): bandeiras SVG por código alfa-2. Uso na Fase 2.
+- **`flag-icons`** 7.6.0 (npm, MIT): bandeiras SVG por código alfa-2, em `web/public/flags/` (licença copiada ao lado).
 
 ## Fontes de outros recursos
 - **Tipografia:** Fraunces, IBM Plex Sans e IBM Plex Mono, via pacotes @fontsource. Licença SIL Open Font License 1.1 (cópias em `web/public/fonts/LICENSE-*.txt`).

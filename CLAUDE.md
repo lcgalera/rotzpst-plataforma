@@ -28,6 +28,11 @@ Web (dentro de `web/`):
 - `pnpm dev`: servidor local (página do design system em `/design`)
 - `pnpm lint` · `pnpm typecheck` · `pnpm test` · `pnpm format` · `pnpm build`
 - `pnpm contraste`: regenera `docs/contraste.md` a partir dos tokens. Ao criar combinação nova de cor, adicione o par em `src/lib/pares-contraste.ts`.
+- O site lê o Postgres: crie `web/.env.local` com `DATABASE_URL` (ver `.env.example`) e rode a carga em `ingest/` antes.
+- `pnpm geo` (copia `data/geo/` para `public/geo/`), `pnpm vendor` (worker do MapLibre), `pnpm silhueta` (contorno e centroide do Brasil).
+- Dados lidos só por `src/lib/dados.ts` (`'use cache'`). Nunca usar `new Date()` em render: quebra o prerender e a honestidade da defasagem.
+- Gráficos: `components/graficos/Grafico.tsx` (sempre com tabela alternativa). Mapa plano: `components/mapa/`. Globo: `components/globo/GloboMapLibre.tsx` (carregado sob demanda).
+- Semente de CI: `db/seeds/gerar_semente_ci.sh` regenera `db/seeds/ci.sql` (dados reais, recorte).
 
 Ingestão (dentro de `ingest/`, com `DATABASE_URL` definida; ver `.env.example`):
 - `uv sync` · `uv run pytest` · `uv run ruff check .` · `uv run ruff format .`
