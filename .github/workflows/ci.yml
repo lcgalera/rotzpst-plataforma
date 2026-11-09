@@ -8,11 +8,29 @@ on:
 jobs:
   web:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: rotzx
+          POSTGRES_PASSWORD: rotzx
+          POSTGRES_DB: rotzx
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U rotzx" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      # Build usa um recorte real e pequeno dos dados (db/seeds/ci.sql)
+      DATABASE_URL: postgresql://rotzx:rotzx@localhost:5432/rotzx
     defaults:
       run:
         working-directory: web
     steps:
       - uses: actions/checkout@v4
+      - name: Banco com migrações e semente
+        working-directory: .
+        run: |
+          for f in db/migrations/*.sql; do psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f "$f"; done
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f db/seeds/ci.sql
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: web/package.json
