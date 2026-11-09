@@ -1,0 +1,64 @@
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  padding: var(--e-2) var(--e-4);
+  border: 1px solid transparent;
+  border-radius: var(--raio);
+  font-family: var(--fonte-corpo);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--mov-rapido) var(--curva),
+    color var(--mov-rapido) var(--curva),
+    border-color var(--mov-rapido) var(--curva);
+}
+
+.botao:disabled,
+.botao[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.primario {
+  background: var(--cor-grafite);
+  border-color: var(--cor-grafite);
+  color: var(--cor-papel);
+}
+
+.primario:hover:not(:disabled) {
+  background: var(--cor-papel);
+  color: var(--cor-grafite);
+}
+
+.secundario {
+  background: transparent;
+  border-color: var(--cor-grafite);
+  color: var(--texto);
+}
+
+.secundario:hover:not(:disabled) {
+  background: var(--cor-grafite);
+  color: var(--cor-papel);
+}
+
+.terciario {
+  padding-inline: 0;
+  background: transparent;
+  color: var(--texto);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.terciario:hover:not(:disabled) {
+  text-decoration-thickness: 2px;
+}
+
+/* Terracota só no estado ativo específico (ex.: aba selecionada) */
+.botao[aria-pressed="true"] {
+  border-bottom-color: var(--cor-terracota);
+}

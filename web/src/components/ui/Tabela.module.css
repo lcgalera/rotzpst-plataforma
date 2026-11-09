@@ -1,0 +1,66 @@
+.rolagem {
+  overflow-x: auto;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-sm);
+}
+
+.legenda {
+  text-align: left;
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+  margin-bottom: var(--e-2);
+}
+
+.tabela th,
+.tabela td {
+  padding: var(--e-2) var(--e-4) var(--e-2) 0;
+  border-bottom: var(--linha);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.tabela thead th {
+  font-size: var(--t-xs);
+  font-weight: 500;
+  color: var(--texto-suave);
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tabela tbody th {
+  font-weight: 400;
+}
+
+.num {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ordenar {
+  all: unset;
+  display: inline-flex;
+  gap: var(--e-1);
+  align-items: baseline;
+  cursor: pointer;
+  border-radius: var(--raio);
+}
+
+.ordenar:focus-visible {
+  outline: 2px solid var(--foco);
+  outline-offset: 2px;
+}
+
+.seta {
+  color: var(--texto-suave);
+}
+
+.ausente {
+  color: var(--texto-suave);
+  font-style: italic;
+}

@@ -1,0 +1,17 @@
+.bandeira {
+  display: inline-block;
+  vertical-align: baseline;
+  border: var(--linha);
+  border-radius: var(--raio);
+  object-fit: cover;
+}
+
+.p {
+  width: 1.25em;
+  height: auto;
+}
+
+.m {
+  width: var(--e-8);
+  height: auto;
+}

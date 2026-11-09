@@ -37,6 +37,13 @@ export const PARES: Par[] = [
   { frente: "foco", fundo: "fundo", uso: "interface", onde: "Anel de foco sobre papel" },
   { frente: "foco", fundo: "cor-areia", uso: "interface", onde: "Anel de foco sobre areia" },
   { frente: "cor-grafite", fundo: "fundo", uso: "interface", onde: "Contorno do botão secundário" },
+  { frente: "cor-terracota", fundo: "fundo", uso: "interface", onde: "Sublinhado da aba ativa" },
+  {
+    frente: "cor-azul-profundo",
+    fundo: "cor-areia",
+    uso: "interface",
+    onde: "País selecionado no globo (sobre oceano)",
+  },
 
   // Decorativos (sem meta; registrados por transparência)
   {

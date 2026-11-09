@@ -1,0 +1,26 @@
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2) var(--e-6);
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  display: inline-block;
+  padding-block: var(--e-1);
+  color: var(--texto);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--mov-rapido) var(--curva);
+}
+
+.item:hover {
+  border-bottom-color: var(--cor-linha);
+}
+
+.item[aria-current="page"] {
+  border-bottom-color: var(--texto);
+}

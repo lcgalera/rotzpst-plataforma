@@ -1,0 +1,60 @@
+.kpi {
+  border-top: var(--linha);
+  padding-top: var(--e-3);
+}
+
+.rotulo {
+  font-size: var(--t-sm);
+  font-weight: 500;
+}
+
+.periodo {
+  font-weight: 400;
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+
+.valor {
+  margin-block: var(--e-2) var(--e-1);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-xl);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.unidade {
+  margin-left: var(--e-1);
+  font-family: var(--fonte-corpo);
+  font-size: var(--t-sm);
+  font-weight: 400;
+  color: var(--texto-suave);
+  letter-spacing: 0;
+}
+
+.variacao {
+  font-size: var(--t-sm);
+}
+
+.suave {
+  color: var(--texto-suave);
+}
+
+.nota {
+  margin-top: var(--e-1);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+  font-style: italic;
+}
+
+.fonte {
+  margin-top: var(--e-2);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}
+
+.vazio {
+  margin-top: var(--e-2);
+  font-size: var(--t-sm);
+  color: var(--texto-suave);
+}

@@ -23,6 +23,8 @@ Metas (PLANO-DESIGN.md, seção 2): **4,50:1** para texto normal; **3,00:1** par
 | `--foco` #294D68 | `--fundo` #F5F1E8 | 7,91:1 | Interface/gráfico (3:1) | ✅ passa | Anel de foco sobre papel |
 | `--foco` #294D68 | `--cor-areia` #DDD6C9 | 6,17:1 | Interface/gráfico (3:1) | ✅ passa | Anel de foco sobre areia |
 | `--cor-grafite` #252622 | `--fundo` #F5F1E8 | 13,51:1 | Interface/gráfico (3:1) | ✅ passa | Contorno do botão secundário |
+| `--cor-terracota` #B96549 | `--fundo` #F5F1E8 | 3,71:1 | Interface/gráfico (3:1) | ✅ passa | Sublinhado da aba ativa |
+| `--cor-azul-profundo` #294D68 | `--cor-areia` #DDD6C9 | 6,17:1 | Interface/gráfico (3:1) | ✅ passa | País selecionado no globo (sobre oceano) |
 | `--cor-linha` #D0C9BB | `--fundo` #F5F1E8 | 1,46:1 | Decorativo (sem meta) | — | Divisórias finas (hierarquia vem do espaço) |
 | `--cor-ocre` #D7A64B | `--fundo` #F5F1E8 | 1,97:1 | Decorativo (sem meta) | — | Ocre: só detalhe gráfico, nunca texto |
 | `--d-1` #294D68 | `--fundo` #F5F1E8 | 7,91:1 | Interface/gráfico (3:1) | ✅ passa | Série de dados 1 |
@@ -35,7 +37,7 @@ Metas (PLANO-DESIGN.md, seção 2): **4,50:1** para texto normal; **3,00:1** par
 
 ## Resumo
 
-- Pares permitidos avaliados com meta: 22
+- Pares permitidos avaliados com meta: 24
 - Reprovados: 0
 
 ## Combinações proibidas

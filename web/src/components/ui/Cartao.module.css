@@ -1,0 +1,24 @@
+.cartao {
+  border-top: var(--linha);
+  padding-top: var(--e-4);
+}
+
+.completa {
+  border: var(--linha);
+  border-radius: var(--raio);
+  padding: var(--e-4);
+}
+
+.titulo {
+  font-size: var(--t-lg);
+}
+
+.meta {
+  margin-top: var(--e-2);
+  font-size: var(--t-sm);
+  color: var(--texto-suave);
+}
+
+.corpo {
+  margin-top: var(--e-3);
+}

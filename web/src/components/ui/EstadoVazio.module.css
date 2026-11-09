@@ -1,0 +1,16 @@
+.vazio {
+  padding: var(--e-6) 0;
+  border-top: var(--linha);
+  border-bottom: var(--linha);
+}
+
+.titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-lg);
+}
+
+.corpo {
+  margin-top: var(--e-2);
+  font-size: var(--t-sm);
+  color: var(--texto-suave);
+}
