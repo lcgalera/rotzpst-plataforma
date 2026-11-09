@@ -12,20 +12,39 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "contraste": "node scripts/contraste.ts",
-    "contraste:checar": "node scripts/contraste.ts --checar"
+    "contraste:checar": "node scripts/contraste.ts --checar",
+    "geo": "cp ../data/geo/countries-110m.json ../data/geo/countries-50m.json ../data/geo/LICENSE-world-atlas.txt public/geo/",
+    "silhueta": "node scripts/silhueta-brasil.ts",
+    "vendor": "cp node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs public/vendor/maplibre-gl-worker-6.17.0.mjs"
   },
   "dependencies": {
+    "d3-array": "^3.2.5",
+    "d3-geo": "^3.1.2",
+    "d3-scale": "^4.0.3",
+    "d3-shape": "^3.2.1",
+    "maplibre-gl": "^6.17.0",
     "next": "16.4.5",
+    "postgres": "^4.1.0",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "topojson-client": "^3.1.0"
   },
   "devDependencies": {
+    "@types/d3-array": "^3.2.2",
+    "@types/d3-geo": "^3.1.1",
+    "@types/d3-scale": "^4.0.9",
+    "@types/d3-shape": "^3.2.0",
+    "@types/geojson": "^7946.0.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5",
     "eslint": "^9",
     "eslint-config-next": "16.4.5",
     "eslint-config-prettier": "^10.1.8",
+    "flag-icons": "^7.6.0",
     "prettier": "^3.9.10",
     "typescript": "^5",
     "vitest": "^5.1.0"
