@@ -3,7 +3,10 @@ name = "rotzx-ingest"
 version = "0.1.0"
 description = "Jobs de ingestão de dados do rotzx (fontes, notícias, agendamentos)."
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "psycopg[binary]>=3.3.8",
+    "pycountry>=26.2.16",
+]
 
 [dependency-groups]
 dev = ["pytest>=8", "ruff>=0.8"]
@@ -21,3 +24,5 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "SIM"]
+# Comprimento de código fica com o formatter; textos e SQL longos são aceitos.
+ignore = ["E501"]
