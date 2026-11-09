@@ -1,0 +1,213 @@
+/*
+ * Reset, tipografia base e grid. Só usa variáveis de tokens.css.
+ * Exceções documentadas: breakpoints de media query (CSS não aceita var() ali)
+ * e valores adimensionais (entrelinha, pesos, medida em ch).
+ */
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  font-size: var(--t-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- Tipografia ---------- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  line-height: 1.1;
+  text-wrap: balance;
+  font-optical-sizing: auto;
+}
+
+h1 {
+  font-size: var(--t-2xl);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--t-xl);
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-size: var(--t-lg);
+  letter-spacing: -0.01em;
+}
+
+p,
+li {
+  max-width: 68ch; /* medida 65–72 caracteres */
+  text-wrap: pretty;
+}
+
+small {
+  font-size: var(--t-sm);
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-thickness var(--mov-rapido) var(--curva);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Foco visível: anel de 2px em --foco com offset, em todo elemento interativo */
+:focus-visible {
+  outline: 2px solid var(--foco);
+  outline-offset: 2px;
+  border-radius: var(--raio);
+}
+
+::selection {
+  background: var(--cor-areia);
+  color: var(--texto);
+}
+
+hr {
+  border: 0;
+  border-top: var(--linha);
+}
+
+/* Números de dados: tabulares, fonte e data abaixo do valor */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.dados {
+  font-family: var(--fonte-dados);
+  font-variant-numeric: tabular-nums;
+}
+
+.titulo-display {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-display);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.rotulo {
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+  letter-spacing: 0.02em;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Grid: 12 / 6 / 4 colunas, calhas de 24px ---------- */
+.container {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: clamp(var(--e-4), 5vw, var(--e-24));
+}
+
+.grade {
+  --colunas: 4;
+  display: grid;
+  grid-template-columns: repeat(var(--colunas), minmax(0, 1fr));
+  column-gap: var(--e-6);
+  row-gap: var(--e-6);
+}
+
+@media (min-width: 40rem) {
+  .grade {
+    --colunas: 6;
+  }
+}
+
+@media (min-width: 64rem) {
+  .grade {
+    --colunas: 12;
+  }
+}
+
+/* Span utilitário: tudo ocupa a largura toda no mobile; colunas a partir do desktop */
+.grade > * {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 64rem) {
+  .col-2 {
+    grid-column: span 2;
+  }
+  .col-3 {
+    grid-column: span 3;
+  }
+  .col-4 {
+    grid-column: span 4;
+  }
+  .col-5 {
+    grid-column: span 5;
+  }
+  .col-6 {
+    grid-column: span 6;
+  }
+  .col-7 {
+    grid-column: span 7;
+  }
+  .col-8 {
+    grid-column: span 8;
+  }
+  .col-9 {
+    grid-column: span 9;
+  }
+  .col-12 {
+    grid-column: span 12;
+  }
+}

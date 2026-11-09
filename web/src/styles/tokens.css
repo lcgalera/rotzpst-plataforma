@@ -1,0 +1,93 @@
+/*
+ * Design tokens do rotzx — fonte única de verdade do visual.
+ * Origem: PLANO-DESIGN.md, seções 2 e 6. Componentes usam SOMENTE estas variáveis.
+ * Para mudar paleta, fonte ou decisões da seção 1, perguntar antes (regra 13.3).
+ */
+:root {
+  /* Neutros (≈75% da interface) */
+  --cor-papel: #f5f1e8;
+  --cor-areia: #ddd6c9;
+  --cor-grafite: #252622;
+  --cor-grafite-suave: #55564f; /* textos secundários, validar contraste */
+  --cor-linha: #d0c9bb; /* divisórias finas */
+
+  /* Estruturais (≈20%) */
+  --cor-verde-mata: #355c4b;
+  --cor-azul-profundo: #294d68;
+
+  /* Destaque (≈5%) */
+  --cor-terracota: #b96549; /* grandes elementos e detalhes */
+  --cor-terracota-texto: #9c4a33; /* texto pequeno e links sobre papel */
+  --cor-ocre: #d7a64b; /* só detalhe gráfico, nunca texto */
+
+  /* Semântico */
+  --fundo: var(--cor-papel);
+  --texto: var(--cor-grafite);
+  --texto-suave: var(--cor-grafite-suave);
+  --link: var(--cor-terracota-texto);
+  --foco: var(--cor-azul-profundo);
+
+  /* Tipografia */
+  --fonte-titulo: "Fraunces", Georgia, serif;
+  --fonte-corpo: "IBM Plex Sans", system-ui, sans-serif;
+  --fonte-dados: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Escala tipográfica (fluida) */
+  --t-xs: clamp(0.75rem, 0.73rem + 0.1vw, 0.8125rem);
+  --t-sm: 0.875rem;
+  --t-base: 1rem;
+  --t-lg: 1.25rem;
+  --t-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --t-2xl: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --t-display: clamp(3rem, 2rem + 5vw, 6.5rem);
+
+  /* Espaçamento (base 4px) */
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-6: 1.5rem;
+  --e-8: 2rem;
+  --e-12: 3rem;
+  --e-16: 4rem;
+  --e-24: 6rem;
+
+  /* Forma */
+  --raio: 2px; /* quase reto, linguagem editorial */
+  --linha: 1px solid var(--cor-linha);
+
+  /* Movimento */
+  --mov-rapido: 150ms;
+  --mov-medio: 300ms;
+  --curva: cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --mov-rapido: 0ms;
+    --mov-medio: 0ms;
+  }
+}
+
+/* Paleta de dados (separada da marca) — PLANO-DESIGN.md seção 6 */
+:root {
+  /* Categórica (até 6 séries) */
+  --d-1: #294d68; /* azul profundo */
+  --d-2: #c8742a; /* laranja queimado */
+  --d-3: #5e8c7b; /* verde-água fosco */
+  --d-4: #8a5a8c; /* ameixa */
+  --d-5: #d7a64b; /* ocre */
+  --d-6: #6b6b63; /* cinza quente */
+
+  /* Divergente (variação positiva/negativa) */
+  --d-pos: #2f6f8f;
+  --d-neg: #b4492e;
+  --d-neutro: #ddd6c9;
+
+  /* Sequencial (mapas coropléticos): areia → azul profundo */
+  --d-seq-1: #ede7da;
+  --d-seq-2: #c9d3d8;
+  --d-seq-3: #8faab9;
+  --d-seq-4: #55809a;
+  --d-seq-5: #294d68;
+}
