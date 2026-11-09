@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { formatarRazao, META, passa, razaoContraste } from "@/lib/contraste";
 import { PARES } from "@/lib/pares-contraste";
 import { lerAliases, lerCores, resolverHex, type TokenCor } from "@/lib/tokens";
+import { Componentes } from "./Componentes";
 import s from "./design.module.css";
 
 export const metadata: Metadata = {
@@ -100,7 +101,7 @@ export default function DesignPage() {
     <main className="container">
       <header className={`grade ${s.cabecalho}`}>
         <div className="col-7">
-          <p className="rotulo">rotzx · Fase A · fundação do design system</p>
+          <p className="rotulo">rotzx · Fases A, B e C do design system</p>
           <h1 className="titulo-display">Sistema de design</h1>
         </div>
         <div className={`col-3 ${s.meta}`}>
@@ -296,6 +297,8 @@ export default function DesignPage() {
           </div>
         </div>
       </section>
+
+      <Componentes />
 
       {/* ---------- Forma, foco e movimento ---------- */}
       <section className={s.secao} aria-labelledby="forma">

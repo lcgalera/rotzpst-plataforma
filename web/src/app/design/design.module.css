@@ -342,3 +342,29 @@
 .movimento:focus-visible {
   transform: translateY(calc(-1 * var(--e-2)));
 }
+
+/* ---------- Componentes ---------- */
+.linhaComps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-3);
+  margin-top: var(--e-3);
+}
+
+.bandeiras {
+  margin-block: var(--e-3);
+}
+
+.modulos {
+  margin-top: var(--e-3);
+}
+
+.marcadorExemplo {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  margin-top: var(--e-6);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-lg);
+}
