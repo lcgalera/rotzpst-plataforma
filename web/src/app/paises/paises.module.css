@@ -1,0 +1,32 @@
+.secao {
+  padding-block: var(--e-8);
+  border-bottom: var(--linha);
+}
+
+.lista {
+  margin-top: var(--e-4);
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: var(--e-1) var(--e-6);
+}
+
+.compacta {
+  font-size: var(--t-sm);
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+}
+
+.item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--e-2);
+  padding-block: var(--e-1);
+  color: var(--texto);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.item:hover {
+  border-bottom-color: var(--texto);
+}

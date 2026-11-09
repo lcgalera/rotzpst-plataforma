@@ -1,0 +1,86 @@
+.explorador {
+  padding-block: var(--e-8) var(--e-12);
+}
+
+.palco {
+  min-width: 0;
+}
+
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  margin-bottom: var(--e-6);
+}
+
+.painel {
+  border-top: var(--linha);
+  padding-top: var(--e-4);
+  align-self: start;
+}
+
+.rotuloSelect {
+  display: block;
+  font-size: var(--t-sm);
+  font-weight: 500;
+  margin-bottom: var(--e-2);
+}
+
+.select {
+  width: 100%;
+  padding: var(--e-2) var(--e-3);
+  border: 1px solid var(--cor-grafite);
+  border-radius: var(--raio);
+  background: var(--fundo);
+  font-size: var(--t-sm);
+}
+
+.detalhe {
+  margin-top: var(--e-6);
+}
+
+.nome {
+  display: flex;
+  align-items: baseline;
+  gap: var(--e-2);
+  font-size: var(--t-xl);
+}
+
+.lista {
+  margin-top: var(--e-4);
+}
+
+.lista > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--e-4);
+  padding-block: var(--e-2);
+  border-bottom: var(--linha);
+  font-size: var(--t-sm);
+}
+
+.lista dd {
+  font-weight: 600;
+  text-align: right;
+}
+
+.periodo {
+  color: var(--texto-suave);
+}
+
+.fonte {
+  margin-top: var(--e-2);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}
+
+.vazio {
+  margin-top: var(--e-2);
+  font-size: var(--t-sm);
+  color: var(--texto-suave);
+}
+
+.abrir {
+  margin-top: var(--e-6);
+  font-weight: 500;
+}

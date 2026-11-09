@@ -1,0 +1,42 @@
+.cabecalho {
+  border-bottom: var(--linha);
+}
+
+.linha {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--e-6);
+  padding-block: var(--e-4);
+}
+
+.marca {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-xl);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.pular {
+  position: absolute;
+  left: var(--e-4);
+  top: calc(-1 * var(--e-16));
+  padding: var(--e-2) var(--e-4);
+  background: var(--cor-grafite);
+  color: var(--cor-papel);
+  z-index: 10;
+}
+
+.pular:focus {
+  top: var(--e-2);
+}
+
+.rodape {
+  margin-top: var(--e-24);
+  padding-block: var(--e-8);
+  border-top: var(--linha);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}

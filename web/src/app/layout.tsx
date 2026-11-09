@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/tokens.css";
 import "@/styles/fonts.css";
 import "@/styles/base.css";
+import { Cabecalho, Rodape } from "@/components/site/Cabecalho";
 import { PreloadFontes } from "./preload-fontes";
 
 export const metadata: Metadata = {
@@ -17,7 +18,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="pt-BR">
       <body>
         <PreloadFontes />
-        {children}
+        <Cabecalho />
+        <div id="conteudo">{children}</div>
+        <Rodape />
       </body>
     </html>
   );
