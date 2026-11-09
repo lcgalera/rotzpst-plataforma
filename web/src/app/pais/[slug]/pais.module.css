@@ -70,3 +70,7 @@
   border-left: 2px solid var(--cor-ocre);
   margin-bottom: var(--e-3);
 }
+
+.noticias {
+  margin-bottom: var(--e-12);
+}

@@ -8,6 +8,7 @@ import { Abas } from "@/components/ui/Abas";
 import { Bandeira } from "@/components/ui/Bandeira";
 import { EstadoVazio } from "@/components/ui/EstadoVazio";
 import { FonteDado } from "@/components/ui/FonteDado";
+import { NoticiaAnalise } from "@/components/noticias/NoticiaAnalise";
 import { Kpi } from "@/components/ui/Kpi";
 import {
   type Indicador,
@@ -17,6 +18,7 @@ import {
   type SerieDoPais,
   seriesDoPais,
 } from "@/lib/dados";
+import { type NoticiaPublicada, noticiasDoPais } from "@/lib/noticias";
 import s from "./pais.module.css";
 
 /** Ordem de leitura dos indicadores na página. */
@@ -112,11 +114,30 @@ function SecaoIndicador({ ind, serie }: { ind: Indicador; serie: SerieDoPais | u
   );
 }
 
+function SecaoNoticias({ tema, noticias }: { tema: string; noticias: NoticiaPublicada[] }) {
+  if (noticias.length === 0) return null;
+  return (
+    <section aria-labelledby={`noticias-${tema}`} className={s.noticias}>
+      <h2 id={`noticias-${tema}`} className={s.tituloSecao}>
+        Notícias recentes
+      </h2>
+      {noticias.map((n) => (
+        <NoticiaAnalise key={n.id} n={n} />
+      ))}
+    </section>
+  );
+}
+
 async function Conteudo({ params }: { params: PageProps<"/pais/[slug]">["params"] }) {
   const { slug } = await params;
   const pais = await obterPaisPorSlug(slug);
   if (!pais) notFound();
-  const [series, indicadores] = await Promise.all([seriesDoPais(pais.iso3), listarIndicadores()]);
+  const [series, indicadores, noticias] = await Promise.all([
+    seriesDoPais(pais.iso3),
+    listarIndicadores(),
+    noticiasDoPais(pais.iso3),
+  ]);
+  const doTema = (t: string) => noticias.filter((n) => n.temas.includes(t));
   const porCodigo = new Map(series.map((x) => [x.indicador.codigo, x]));
   const ordenados = ORDEM.map((c) => indicadores.find((i) => i.codigo === c)).filter(
     (i): i is Indicador => !!i,
@@ -157,6 +178,7 @@ async function Conteudo({ params }: { params: PageProps<"/pais/[slug]">["params"
           })}
         </div>
       </section>
+      <SecaoNoticias tema="economia" noticias={doTema("economia")} />
       <section aria-labelledby="series" className={s.series}>
         <h2 id="series" className={s.tituloSecao}>
           <MarcadorSecao
@@ -176,14 +198,17 @@ async function Conteudo({ params }: { params: PageProps<"/pais/[slug]">["params"
     </>
   );
 
-  const semConteudo = (tema: string) => (
-    <EstadoVazio titulo={`Ainda não há conteúdo de ${tema} publicado para este país.`}>
-      <p>
-        Esta seção vai reunir notícias organizadas em fato, interpretação e impacto, sempre com link para as
-        fontes originais.
-      </p>
-    </EstadoVazio>
-  );
+  const porTema = (tema: string, nome: string) =>
+    doTema(tema).length ? (
+      <SecaoNoticias tema={tema} noticias={doTema(tema)} />
+    ) : (
+      <EstadoVazio titulo={`Ainda não há conteúdo de ${nome} publicado para este país.`}>
+        <p>
+          Esta seção reúne notícias organizadas em fato, interpretação e impacto, sempre com link para as
+          fontes originais. Só aparecem depois de revisadas por uma pessoa.
+        </p>
+      </EstadoVazio>
+    );
 
   return (
     <>
@@ -202,8 +227,8 @@ async function Conteudo({ params }: { params: PageProps<"/pais/[slug]">["params"
         rotulo={`${pais.nome}: panorama`}
         abas={[
           { id: "economia", rotulo: "Economia", conteudo: economia },
-          { id: "politica", rotulo: "Política", conteudo: semConteudo("política") },
-          { id: "geopolitica", rotulo: "Geopolítica", conteudo: semConteudo("geopolítica") },
+          { id: "politica", rotulo: "Política", conteudo: porTema("politica", "política") },
+          { id: "geopolitica", rotulo: "Geopolítica", conteudo: porTema("geopolitica", "geopolítica") },
         ]}
       />
     </>

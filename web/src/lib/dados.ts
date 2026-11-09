@@ -12,7 +12,7 @@ import { slugPais } from "./slug";
 
 let _sql: postgres.Sql | null = null;
 
-function sql(): postgres.Sql {
+export function sql(): postgres.Sql {
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error("DATABASE_URL não definida (ver .env.example).");
   _sql ??= postgres(url, { max: 5, idle_timeout: 20 });

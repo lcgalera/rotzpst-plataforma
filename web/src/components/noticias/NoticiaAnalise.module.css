@@ -1,0 +1,81 @@
+.noticia {
+  padding-block: var(--e-6);
+  border-top: var(--linha);
+  max-width: 72ch;
+}
+
+.meta {
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}
+
+.titulo {
+  margin-top: var(--e-1);
+  font-size: var(--t-lg);
+}
+
+.titulo a {
+  color: var(--texto);
+  text-decoration-color: var(--cor-linha);
+}
+
+.titulo a:hover {
+  text-decoration-color: var(--texto);
+}
+
+.rotuloIa {
+  margin-top: var(--e-2);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+  letter-spacing: 0.02em;
+}
+
+.resumo {
+  margin-top: var(--e-3);
+}
+
+.blocos {
+  display: grid;
+  gap: var(--e-4);
+  margin-top: var(--e-4);
+}
+
+.bloco {
+  padding-left: var(--e-3);
+  border-left: 2px solid var(--cor-linha);
+  font-size: var(--t-sm);
+}
+
+.rotuloBloco {
+  font-weight: 600;
+  margin-bottom: var(--e-1);
+}
+
+.notaBloco {
+  font-weight: 400;
+  color: var(--texto-suave);
+  font-style: italic;
+}
+
+.fontes {
+  margin-top: var(--e-4);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}
+
+.fontes summary {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.fontes ul {
+  margin-top: var(--e-2);
+  padding-left: var(--e-4);
+  font-style: italic;
+}
+
+.atribuicao {
+  margin-top: var(--e-3);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}
