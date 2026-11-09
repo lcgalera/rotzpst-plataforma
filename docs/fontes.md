@@ -2,20 +2,20 @@
 
 > Levantamento da **Fase 1** (2026-11-09). Para cada fonte: o que oferece, formato, frequência, licença/termos e onde isso foi confirmado. "Confirmado" = verificado nesta data na API ou na documentação oficial; "a confirmar" = ainda não verificado, **não integrar** até confirmar.
 >
-> Rede: o ambiente de desenvolvimento só alcança hosts liberados. Liberados e testados: `api.worldbank.org`, `www.imf.org`, `api.bcb.gov.br`, `olinda.bcb.gov.br`, `apisidra.ibge.gov.br`, `query.wikidata.org`, registros npm e PyPI. Bloqueados no teste: `sdmx.oecd.org`, `servicodados.ibge.gov.br`, `hdr.undp.org`, `naciscdn.org`, `comtradeapi.un.org`.
+> Rede: o ambiente de desenvolvimento só alcança hosts liberados. Liberados e testados: `api.worldbank.org`, `www.imf.org`, `api.imf.org`, `data.imf.org`, `api.bcb.gov.br`, `olinda.bcb.gov.br`, `apisidra.ibge.gov.br`, `query.wikidata.org`, registros npm e PyPI. Bloqueados no teste: `sdmx.oecd.org`, `servicodados.ibge.gov.br`, `hdr.undp.org`, `naciscdn.org`, `comtradeapi.un.org`.
 
 ## Resumo
 
 | Fonte | Uso no rotzx | Formato | Frequência | Licença/termos | Status |
 |---|---|---|---|---|---|
-| Banco Mundial, World Development Indicators (WDI) | Fonte principal dos indicadores-chave | API REST v2, JSON | Base atualizada periodicamente; `lastupdated` da API em 2026-10-08 | CC BY 4.0 com termos adicionais (atribuição conforme metadados; não sugerir endosso) | **Proposta como principal** |
-| FMI, World Economic Outlook (WEO), via DataMapper API | Preencher lacunas do WDI (dívida pública/PIB) | API REST v1, JSON | 2 edições/ano (abr e out); edição atual: out/2026 | **A confirmar**: página de termos (`imf.org/external/terms.htm`) não pôde ser lida | Pendente de decisão (projeções) e de licença |
+| Banco Mundial, World Development Indicators (WDI) | Fonte principal dos indicadores-chave | API REST v2, JSON | Base atualizada periodicamente; `lastupdated` da API em 2026-10-08 | CC BY 4.0 com termos adicionais (atribuição conforme metadados; não sugerir endosso) | **Em uso** |
+| FMI, World Economic Outlook (WEO), via IMF Data API (SDMX 2.1) | Dívida pública/PIB (lacuna do WDI) | SDMX 2.1, XML | 2 edições/ano (abr e out); edição atual publicada em 2026-10-13 | Termos de dados do FMI: uso e redistribuição com atribuição; reuso comercial exige permissão; download em massa automatizado proibido | **Em uso** (só anos observados) |
 | Banco Central do Brasil, SGS | Brasil em detalhe (ex.: Selic) | API REST, JSON | Varia por série (diária/mensal) | ODbL segundo o catálogo de dados abertos do BCB | Candidata, fora do núcleo do piloto |
 | IBGE, SIDRA | Brasil em detalhe | API REST, JSON | Varia por pesquisa | A confirmar | Candidata, fora do núcleo do piloto |
-| Natural Earth (via pacote npm `world-atlas` 2.0.2) | Geometrias de países (globo e mapa) | TopoJSON | Estática (Natural Earth 4.1.0) | Natural Earth: domínio público; pacote: ISC | **Proposta** |
-| `pycountry` (PyPI, dados ISO 3166 do projeto iso-codes) | Lista ISO 3166-1, códigos alfa-2/alfa-3/numérico | Python | A cada release | LGPL 2.1 (usado só como dependência, sem modificar) | **Proposta**, com nomes em pt-BR curados por nós (ver abaixo) |
+| Natural Earth (via pacote npm `world-atlas` 2.0.2) | Geometrias de países (globo e mapa) | TopoJSON | Estática (Natural Earth 4.1.0) | Natural Earth: domínio público; pacote: ISC | **Em uso** (`data/geo/`) |
+| `pycountry` (PyPI, dados ISO 3166 do projeto iso-codes) | Lista ISO 3166-1, códigos alfa-2/alfa-3/numérico | Python | A cada release | LGPL 2.1 (usado só como dependência, sem modificar) | **Em uso**, com nomes pt-BR revisados |
 | `flag-icons` (npm 7.6.0) | Bandeiras em SVG | SVG | A cada release | MIT | Proposta para a Fase 2 |
-| PNUD, IDH | IDH | — | Anual | A confirmar | **Bloqueada pela rede** |
+| PNUD, IDH | IDH | — | Anual | A confirmar | Fora do MVP por ora (host bloqueado) |
 | OCDE, UN Comtrade | — | — | — | — | Não necessárias para o piloto; bloqueadas pela rede |
 
 ## Banco Mundial, WDI
@@ -81,13 +81,19 @@ Piloto testado: 19 países do G20 + 8 vizinhos do Brasil fora do G20 (Argentina 
 
 **Leitura:** PIB, crescimento, PIB per capita, desemprego e população têm cobertura completa e recente. Inflação e balança, quase completa (exceções: VEN inflação 2016; GUY e SUR balança antiga). **Dívida/PIB e juros têm cobertura fraca** no WDI.
 
-## FMI, WEO (DataMapper API)
+## FMI, WEO (IMF Data API)
 
-- **Endpoints testados:** `https://www.imf.org/external/datamapper/api/v1/indicators` (lista) e `https://www.imf.org/external/datamapper/api/v1/{indicador}[/{iso3}]` (valores).
-- **Edição:** a API informa "World Economic Outlook (October 2026)".
-- **Dívida pública bruta do governo geral (`GGXWDG_NGDP`, % do PIB):** séries para 26 dos 27 países do piloto (Venezuela sem dado).
-- ⚠️ **Projeções misturadas:** as séries vão até **2031** e a DataMapper API **não marca** quais anos são observados e quais são projeções. A base completa do WEO para download tem a coluna "Estimates Start After" por país/indicador ([página do WEO database](https://www.imf.org/en/Publications/WEO/weo-database/2024/April)), mas o formato e o endereço da edição atual ainda não foram verificados.
-- **Termos:** o FAQ do WEO diz que o uso exige citação adequada e remete aos termos gerais em `imf.org/external/terms.htm` ([FAQ](https://data.imf.org/en/Datasets/WEO/Frequently-Asked-Questions)). **A página de termos não pôde ser lida neste ambiente**: licença e redistribuição **a confirmar**.
+- **Endpoint em uso:** `https://api.imf.org/external/sdmx/2.1/data/IMF.RES,WEO/{ISO3+ISO3...}.{INDICADOR}.A?detail=full` (SDMX 2.1, XML). Base tirada do registro de fontes da biblioteca `sdmx1` (id `IMF_DATA`) e verificada com consulta real. Dataflow `IMF.RES:WEO` versão 9.0.0.
+- **Por que não a DataMapper API** (`www.imf.org/external/datamapper/api/v1`): ela devolve até 2031 misturando observado e projeção, sem marcar a diferença.
+- **Separação fato × projeção:** o atributo `LATEST_ACTUAL_ANNUAL_DATA` vem no elemento `Group` (país × indicador). Ele substitui a antiga coluna "Estimates Start After", segundo o [guia de transição do WEO](https://data.imf.org/-/media/iData/External-Storage/Documents/DDAF479A0D474D01AA7E1B8435396BFD/en/WEO_Database_Transition_Guide.pdf) (out/2026). Índia e África do Sul vêm em formato fiscal (`FY2024/25`); ver `docs/decisoes.md`.
+- **Indicador em uso:** `GGXWDG_NGDP`, dívida bruta do governo geral, % do PIB.
+- **Atribuição sugerida pela própria API:** "International Monetary Fund. World Economic Outlook (WEO), https://data.imf.org/en/datasets/IMF.RES:WEO."
+- **Termos** ([IMF Copyright and Usage](https://www.imf.org/en/about/copyright-and-terms), seção "Special Terms for Statistical Data", que inclui explicitamente o WEO):
+  - Permite baixar, copiar, criar obras derivadas, publicar e distribuir, desde que com atribuição ("Source: International Monetary Fund, Database Name, link").
+  - Proíbe alterar o dado de forma que afete sua natureza ou precisão.
+  - **Reuso comercial: pedir permissão** a copyright@imf.org.
+  - **Proíbe download em massa por tecnologia automatizada** sem permissão explícita.
+  - O antigo `imf.org/external/terms.htm` hoje redireciona para uma página 404.
 
 ## Banco Central do Brasil, SGS
 

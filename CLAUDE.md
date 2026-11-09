@@ -29,8 +29,12 @@ Web (dentro de `web/`):
 - `pnpm lint` · `pnpm typecheck` · `pnpm test` · `pnpm format` · `pnpm build`
 - `pnpm contraste`: regenera `docs/contraste.md` a partir dos tokens. Ao criar combinação nova de cor, adicione o par em `src/lib/pares-contraste.ts`.
 
-Ingestão (dentro de `ingest/`):
+Ingestão (dentro de `ingest/`, com `DATABASE_URL` definida; ver `.env.example`):
 - `uv sync` · `uv run pytest` · `uv run ruff check .` · `uv run ruff format .`
+- `uv run python -m jobs.carga`: migrações + catálogo + geometrias + países + séries (idempotente; `--sem-geo` reaproveita `data/geo/`)
+- `uv run python -m jobs.relatorio_qualidade`: regenera `docs/qualidade-dados.md`
+- Catálogo de fontes, indicadores e piloto: `ingest/comum/catalogo.py`. Nomes pt-BR revisados: `ingest/sources/nomes_pt.py`.
+- Projeções nunca entram em `series`. Valor ausente na fonte fica ausente.
 
 ## Next.js 16
 Esta versão tem mudanças em relação ao que modelos conhecem. Antes de usar uma API do Next, ler o guia em `web/node_modules/next/dist/docs/` (ver `web/AGENTS.md`).
