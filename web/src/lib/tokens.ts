@@ -5,7 +5,8 @@
 
 export type TokenCor = { nome: string; hex: string; comentario?: string };
 
-const RE_COR = /--([a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{3,6})\s*;\s*(?:\/\*\s*(.*?)\s*\*\/)?/g;
+// Comentário só conta se estiver na mesma linha da declaração ([ \t]*, não \s*).
+const RE_COR = /--([a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{3,6})\s*;[ \t]*(?:\/\*[ \t]*(.*?)[ \t]*\*\/)?/g;
 const RE_ALIAS = /--([a-z0-9-]+)\s*:\s*var\(--([a-z0-9-]+)\)\s*;/g;
 
 /** Só o primeiro bloco :root (o de @media reduce redefine movimento, não cor). */
