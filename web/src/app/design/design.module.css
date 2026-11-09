@@ -1,0 +1,344 @@
+/* Página /design: só variáveis de tokens.css. */
+
+.cabecalho {
+  padding-block: var(--e-16) var(--e-12);
+  border-bottom: var(--linha);
+}
+
+.meta {
+  align-self: end;
+}
+
+@media (min-width: 64rem) {
+  .meta {
+    grid-column: 9 / span 4;
+  }
+}
+
+.secao {
+  padding-block: var(--e-12);
+  border-bottom: var(--linha);
+}
+
+.secao > h2 {
+  margin-bottom: var(--e-6);
+}
+
+.grupo {
+  margin-top: var(--e-8);
+}
+
+.grupo > h3 {
+  margin-bottom: var(--e-1);
+}
+
+/* ---------- Cores ---------- */
+.amostras {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--e-4);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: var(--e-6);
+}
+
+.amostra {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+  font-size: var(--t-sm);
+}
+
+.bloco {
+  display: block;
+  height: var(--e-16);
+  border: var(--linha);
+  border-radius: var(--raio);
+  margin-bottom: var(--e-2);
+}
+
+.nomeToken {
+  font-family: var(--fonte-dados);
+  font-size: var(--t-xs);
+  color: var(--texto);
+}
+
+.contraste {
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+
+.reprova {
+  color: var(--texto);
+  text-decoration: underline;
+  text-decoration-color: var(--cor-terracota);
+  text-decoration-thickness: 2px;
+}
+
+.semanticos {
+  margin-top: var(--e-4);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: var(--e-2) var(--e-6);
+  font-size: var(--t-sm);
+}
+
+.semanticos div {
+  display: flex;
+  flex-direction: column;
+}
+
+.semanticos dd {
+  color: var(--texto-suave);
+}
+
+.aviso {
+  margin-top: var(--e-12);
+  padding: var(--e-6);
+  border-top: 2px solid var(--cor-terracota);
+  background: var(--cor-areia);
+}
+
+.aviso ul {
+  margin-block: var(--e-3);
+  padding-left: var(--e-4);
+}
+
+.aviso .rotulo,
+.aviso :global(.rotulo) {
+  color: var(--texto);
+}
+
+/* ---------- Tipografia ---------- */
+.corpo h3 {
+  margin-block: var(--e-2) var(--e-3);
+}
+
+.corpo p + p {
+  margin-top: var(--e-4);
+}
+
+.familias {
+  margin-bottom: var(--e-12);
+}
+
+.familiaTitulo,
+.familiaCorpo,
+.familiaDados {
+  font-size: var(--t-display);
+  line-height: 1;
+  margin-bottom: var(--e-3);
+}
+
+.familiaTitulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.familiaCorpo {
+  font-family: var(--fonte-corpo);
+}
+
+.familiaDados {
+  font-family: var(--fonte-dados);
+}
+
+.escala {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--e-12);
+}
+
+.escala li {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  align-items: baseline;
+  gap: var(--e-4);
+  padding-block: var(--e-3);
+  border-top: var(--linha);
+  max-width: none;
+  overflow-wrap: anywhere;
+}
+
+.amostraTitulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.kpiExemplo {
+  border-top: var(--linha);
+  padding-top: var(--e-4);
+  align-self: start;
+}
+
+@media (min-width: 64rem) {
+  .kpiExemplo {
+    grid-column: 10 / span 3;
+  }
+}
+
+.kpiValor {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-2xl);
+  font-weight: 500;
+  line-height: 1;
+  margin-block: var(--e-2);
+}
+
+.kpiUnidade {
+  font-family: var(--fonte-corpo);
+  font-size: var(--t-lg);
+  color: var(--texto-suave);
+  margin-left: var(--e-1);
+}
+
+.kpiVariacao {
+  font-size: var(--t-sm);
+  margin-bottom: var(--e-2);
+}
+
+.tabela {
+  margin-top: var(--e-12);
+  border-collapse: collapse;
+  font-size: var(--t-sm);
+  min-width: min(100%, 28rem);
+}
+
+.tabela caption {
+  text-align: left;
+  margin-bottom: var(--e-2);
+}
+
+.tabela th {
+  font-size: var(--t-xs);
+  font-weight: 500;
+  color: var(--texto-suave);
+  text-align: left;
+  padding: var(--e-2) var(--e-4) var(--e-2) 0;
+  border-bottom: var(--linha);
+}
+
+.tabela td {
+  padding: var(--e-2) var(--e-4) var(--e-2) 0;
+  border-bottom: var(--linha);
+}
+
+.tabela th:not(:first-child),
+.tabela td:not(:first-child) {
+  text-align: right;
+}
+
+/* ---------- Espaçamento ---------- */
+.espacos {
+  list-style: none;
+  padding: 0;
+}
+
+.espacos li {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  align-items: center;
+  gap: var(--e-4);
+  padding-block: var(--e-2);
+}
+
+.barra {
+  display: block;
+  height: var(--e-3);
+  background: var(--cor-verde-mata);
+}
+
+/* ---------- Grid ---------- */
+.gradeDemo {
+  margin-block: var(--e-4) var(--e-8);
+}
+
+.gradeDemo > .coluna {
+  grid-column: auto;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: var(--e-24);
+  padding-bottom: var(--e-2);
+  background: var(--cor-areia);
+  font-size: var(--t-xs);
+  color: var(--texto);
+  font-variant-numeric: tabular-nums;
+}
+
+/* No mobile/tablet a grade tem 4/6 colunas: as excedentes somem. */
+.gradeDemo > .coluna:nth-child(n + 5) {
+  display: none;
+}
+
+@media (min-width: 40rem) {
+  .gradeDemo > .coluna:nth-child(n + 5) {
+    display: flex;
+  }
+  .gradeDemo > .coluna:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+@media (min-width: 64rem) {
+  .gradeDemo > .coluna:nth-child(n + 7) {
+    display: flex;
+  }
+}
+
+.assimetrica {
+  margin-top: var(--e-4);
+  padding-top: var(--e-6);
+  border-top: var(--linha);
+}
+
+@media (min-width: 64rem) {
+  .assimetrica > :last-child {
+    grid-column: 10 / span 3;
+  }
+}
+
+/* ---------- Forma, foco e movimento ---------- */
+.caixaRaio {
+  margin-top: var(--e-3);
+  padding: var(--e-6);
+  border: var(--linha);
+  border-radius: var(--raio);
+  font-size: var(--t-sm);
+}
+
+.botaoDemo {
+  margin-top: var(--e-3);
+  padding: var(--e-2) var(--e-4);
+  background: var(--cor-grafite);
+  color: var(--cor-papel);
+  border: 1px solid var(--cor-grafite);
+  border-radius: var(--raio);
+  cursor: pointer;
+  transition:
+    background var(--mov-rapido) var(--curva),
+    color var(--mov-rapido) var(--curva);
+}
+
+.botaoDemo:hover {
+  background: var(--cor-papel);
+  color: var(--cor-grafite);
+}
+
+.movimento {
+  margin-top: var(--e-3);
+  padding: var(--e-4);
+  border: var(--linha);
+  border-radius: var(--raio);
+  font-size: var(--t-sm);
+  transition: transform var(--mov-medio) var(--curva);
+}
+
+.movimento:hover,
+.movimento:focus-visible {
+  transform: translateY(calc(-1 * var(--e-2)));
+}
