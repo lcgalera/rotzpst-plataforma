@@ -1,0 +1,83 @@
+.figura {
+  width: 100%;
+}
+
+.mapa {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pais {
+  fill: var(--cor-areia);
+  stroke: var(--fundo);
+  stroke-width: 0.5;
+  transition:
+    stroke var(--mov-rapido) var(--curva),
+    stroke-width var(--mov-rapido) var(--curva);
+}
+
+.semDado {
+  fill: url(#sem-dado);
+}
+
+.semDadoFundo {
+  fill: var(--fundo);
+}
+
+.semDadoLinha {
+  stroke: var(--cor-linha);
+  stroke-width: 2;
+}
+
+.link:hover .pais,
+.link:focus-visible .pais {
+  stroke: var(--texto);
+  stroke-width: 1.5;
+}
+
+.link:focus-visible {
+  outline: none;
+}
+
+.destaque {
+  stroke: var(--texto);
+  stroke-width: 1.5;
+}
+
+.legenda {
+  margin-top: var(--e-3);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}
+
+.legendaTitulo {
+  color: var(--texto);
+  font-size: var(--t-sm);
+  margin-bottom: var(--e-2);
+}
+
+.faixas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2) var(--e-4);
+  list-style: none;
+  padding: 0;
+}
+
+.faixas li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+}
+
+.amostra {
+  display: inline-block;
+  width: var(--e-3);
+  height: var(--e-3);
+  border: var(--linha);
+}
+
+.fonte {
+  margin-top: var(--e-2);
+}
