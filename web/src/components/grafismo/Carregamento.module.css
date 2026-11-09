@@ -1,0 +1,48 @@
+.carregamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  padding: var(--e-8) var(--e-4);
+  color: var(--texto-suave);
+}
+
+.silhueta {
+  width: var(--e-16);
+  height: var(--e-16);
+  overflow: visible;
+}
+
+.traco {
+  fill: none;
+  stroke: var(--texto);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  /* 4 × --mov-medio = 1,2s. Com reduced-motion, --mov-medio = 0 e o traço já nasce completo. */
+  animation: desenhar calc(var(--mov-medio) * 4) var(--curva) both;
+}
+
+.coordenadas {
+  font-family: var(--fonte-dados);
+  font-size: var(--t-xs);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.frase {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-sm);
+  color: var(--texto);
+}
+
+@keyframes desenhar {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
