@@ -25,3 +25,6 @@ __pycache__/
 
 # Vercel
 .vercel
+
+# Lotes de análise: contêm o texto integral das fontes (uso interno, nunca versionar)
+data/lotes/
