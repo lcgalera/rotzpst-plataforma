@@ -1,0 +1,23 @@
+[project]
+name = "rotzx-ingest"
+version = "0.1.0"
+description = "Jobs de ingestão de dados do rotzx (fontes, notícias, agendamentos)."
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.8"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
