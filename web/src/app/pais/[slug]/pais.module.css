@@ -1,0 +1,72 @@
+.cabecalho {
+  padding-block: var(--e-12) var(--e-8);
+  align-items: end;
+}
+
+.nome {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  font-size: var(--t-2xl);
+}
+
+.meta {
+  font-size: var(--t-sm);
+  color: var(--texto-suave);
+}
+
+@media (min-width: 64rem) {
+  .meta {
+    grid-column: 9 / span 4;
+    text-align: right;
+  }
+}
+
+.destaques {
+  margin-bottom: var(--e-12);
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: var(--e-6);
+}
+
+.tituloSecao {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  margin-bottom: var(--e-6);
+}
+
+.series {
+  padding-top: var(--e-8);
+  border-top: var(--linha);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
+  gap: var(--e-12) var(--e-8);
+}
+
+.indicador {
+  min-width: 0;
+}
+
+.indicador h3 {
+  margin-bottom: var(--e-1);
+}
+
+.descricao {
+  font-size: var(--t-sm);
+  color: var(--texto-suave);
+  margin-bottom: var(--e-3);
+}
+
+.aviso {
+  font-size: var(--t-sm);
+  padding-left: var(--e-3);
+  border-left: 2px solid var(--cor-ocre);
+  margin-bottom: var(--e-3);
+}
