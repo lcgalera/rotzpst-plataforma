@@ -31,6 +31,18 @@ jobs:
 
   ingest:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: rotzx
+          POSTGRES_PASSWORD: rotzx
+          POSTGRES_DB: rotzx_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U rotzx" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL_TEST: postgresql://rotzx:rotzx@localhost:5432/rotzx_test
     defaults:
       run:
         working-directory: ingest
