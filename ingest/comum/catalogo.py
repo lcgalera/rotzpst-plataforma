@@ -61,6 +61,20 @@ FONTES: tuple[Fonte, ...] = (
         ),
     ),
     Fonte(
+        id="agencia-brasil",
+        nome="Agência Brasil (EBC)",
+        sigla="Agência Brasil",
+        url="https://agenciabrasil.ebc.com.br",
+        licenca=(
+            "Reprodução autorizada para veículos de comunicação com fins jornalísticos, mediante indicação "
+            "da fonte; uso comercial exige contato com o licenciamento da EBC"
+        ),
+        licenca_url="https://agenciabrasil.ebc.com.br/sobre",
+        atribuicao="Agência Brasil",
+        frequencia="Contínua (feeds RSS por editoria)",
+        observacoes='Conteúdo de agências parceiras e itens marcados "proibida a reprodução" são excluídos na coleta.',
+    ),
+    Fonte(
         id="natural-earth",
         nome="Natural Earth (via pacote world-atlas 2.0.2)",
         sigla="Natural Earth",
