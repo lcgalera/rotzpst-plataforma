@@ -15,7 +15,7 @@ Metas (PLANO-DESIGN.md, seção 2): **4,50:1** para texto normal; **3,00:1** par
 | `--cor-azul-profundo` #294D68 | `--fundo` #F5F1E8 | 7,91:1 | Texto normal (4,5:1) | ✅ passa | Texto em azul profundo |
 | `--texto` #252622 | `--cor-areia` #DDD6C9 | 10,54:1 | Texto normal (4,5:1) | ✅ passa | Texto sobre bloco areia |
 | `--texto-suave` #55564F | `--cor-areia` #DDD6C9 | 5,14:1 | Texto normal (4,5:1) | ✅ passa | Metadados sobre bloco areia |
-| `--link` #9C4A33 | `--cor-areia` #DDD6C9 | 4,22:1 | Texto normal (4,5:1) | ❌ reprova | Link sobre bloco areia |
+| `--link` #9C4A33 | `--cor-areia` #DDD6C9 | 4,22:1 | Texto normal (4,5:1) | 🚫 proibido | Link sobre bloco areia |
 | `--cor-papel` #F5F1E8 | `--cor-grafite` #252622 | 13,51:1 | Texto normal (4,5:1) | ✅ passa | Botão primário / bloco invertido |
 | `--cor-papel` #F5F1E8 | `--cor-verde-mata` #355C4B | 6,69:1 | Texto normal (4,5:1) | ✅ passa | Texto sobre bloco verde-mata |
 | `--cor-papel` #F5F1E8 | `--cor-azul-profundo` #294D68 | 7,91:1 | Texto normal (4,5:1) | ✅ passa | Texto sobre bloco azul profundo |
@@ -29,14 +29,17 @@ Metas (PLANO-DESIGN.md, seção 2): **4,50:1** para texto normal; **3,00:1** par
 | `--d-2` #C8742A | `--fundo` #F5F1E8 | 3,11:1 | Interface/gráfico (3:1) | ✅ passa | Série de dados 2 |
 | `--d-3` #5E8C7B | `--fundo` #F5F1E8 | 3,38:1 | Interface/gráfico (3:1) | ✅ passa | Série de dados 3 |
 | `--d-4` #8A5A8C | `--fundo` #F5F1E8 | 4,75:1 | Interface/gráfico (3:1) | ✅ passa | Série de dados 4 |
-| `--d-5` #D7A64B | `--fundo` #F5F1E8 | 1,97:1 | Interface/gráfico (3:1) | ❌ reprova | Série de dados 5 |
-| `--d-6` #6B6B63 | `--fundo` #F5F1E8 | 4,77:1 | Interface/gráfico (3:1) | ✅ passa | Série de dados 6 |
+| `--d-5` #6B6B63 | `--fundo` #F5F1E8 | 4,77:1 | Interface/gráfico (3:1) | ✅ passa | Série de dados 5 |
 | `--d-pos` #2F6F8F | `--fundo` #F5F1E8 | 4,91:1 | Interface/gráfico (3:1) | ✅ passa | Variação positiva |
 | `--d-neg` #B4492E | `--fundo` #F5F1E8 | 4,74:1 | Interface/gráfico (3:1) | ✅ passa | Variação negativa |
 
 ## Resumo
 
-- Pares avaliados com meta: 24
-- Reprovados: 2
-  - `--link` sobre `--cor-areia` (4,22:1): Link sobre bloco areia
-  - `--d-5` sobre `--fundo` (1,97:1): Série de dados 5
+- Pares permitidos avaliados com meta: 22
+- Reprovados: 0
+
+## Combinações proibidas
+
+Reprovam na meta e **não podem ser usadas** na interface (ver `docs/decisoes.md`).
+
+- `--link` sobre `--cor-areia` (4,22:1): Link sobre bloco areia

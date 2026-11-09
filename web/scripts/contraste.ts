@@ -1,8 +1,8 @@
 /**
  * Gera docs/contraste.md a partir de tokens.css e da lista de pares.
  * Uso: pnpm contraste            (escreve o relatório)
- *      pnpm contraste --checar   (falha se o relatório estiver desatualizado)
- * Pares reprovados aparecem no relatório como pendência de decisão; trocar cor exige OK (PLANO-DESIGN 13.3).
+ *      pnpm contraste --checar   (falha se o relatório estiver desatualizado ou se um par permitido reprovar)
+ * Pares marcados `proibido` são combinações que a interface não usa; aparecem no relatório só para registro.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -30,7 +30,8 @@ const linhas = PARES.map((p) => {
   return { ...p, hf, hb, r, ok };
 });
 
-const reprovados = linhas.filter((l) => l.ok === false);
+const reprovados = linhas.filter((l) => l.ok === false && !l.proibido);
+const proibidos = linhas.filter((l) => l.proibido);
 
 const md = `# Relatório de contraste
 
@@ -45,14 +46,14 @@ ${linhas
   .map(
     (l) =>
       `| \`--${l.frente}\` ${l.hf} | \`--${l.fundo}\` ${l.hb} | ${formatarRazao(l.r)} | ${ROTULO_USO[l.uso]} | ${
-        l.ok === null ? "—" : l.ok ? "✅ passa" : "❌ reprova"
+        l.proibido ? "🚫 proibido" : l.ok === null ? "—" : l.ok ? "✅ passa" : "❌ reprova"
       } | ${l.onde} |`,
   )
   .join("\n")}
 
 ## Resumo
 
-- Pares avaliados com meta: ${linhas.filter((l) => l.ok !== null).length}
+- Pares permitidos avaliados com meta: ${linhas.filter((l) => l.ok !== null && !l.proibido).length}
 - Reprovados: ${reprovados.length}${
   reprovados.length
     ? "\n" +
@@ -61,6 +62,12 @@ ${linhas
         .join("\n")
     : ""
 }
+
+## Combinações proibidas
+
+Reprovam na meta e **não podem ser usadas** na interface (ver \`docs/decisoes.md\`).
+
+${proibidos.map((l) => `- \`--${l.frente}\` sobre \`--${l.fundo}\` (${formatarRazao(l.r)}): ${l.onde}`).join("\n")}
 `;
 
 if (process.argv.includes("--checar")) {
@@ -74,7 +81,11 @@ if (process.argv.includes("--checar")) {
     console.error("docs/contraste.md desatualizado. Rode `pnpm contraste`.");
     process.exit(1);
   }
-  console.log(`Relatório de contraste em dia (${reprovados.length} reprovado(s) pendente(s)).`);
+  if (reprovados.length) {
+    console.error(`${reprovados.length} par(es) permitido(s) reprovado(s). Veja docs/contraste.md.`);
+    process.exit(1);
+  }
+  console.log("Contraste OK.");
 } else {
   writeFileSync(destino, md);
   console.log(`docs/contraste.md atualizado (${reprovados.length} reprovado(s)).`);

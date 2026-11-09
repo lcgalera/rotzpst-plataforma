@@ -35,8 +35,8 @@ const GRUPOS: { titulo: string; nota: string; nomes: string[] }[] = [
   },
   {
     titulo: "Dados: categórica",
-    nota: "Até 6 séries. Nunca depender só da cor: rotular a linha, usar forma ou textura.",
-    nomes: ["d-1", "d-2", "d-3", "d-4", "d-5", "d-6"],
+    nota: "Até 5 séries (ocre não entra: some sobre o papel). Nunca depender só da cor: rotular a linha, usar forma ou textura.",
+    nomes: ["d-1", "d-2", "d-3", "d-4", "d-5"],
   },
   {
     titulo: "Dados: divergente",
@@ -89,10 +89,12 @@ function Amostra({ cor }: { cor: TokenCor }) {
 }
 
 export default function DesignPage() {
-  const reprovados = PARES.map((p) => ({
+  const pares = PARES.map((p) => ({
     ...p,
     r: razaoContraste(resolverHex(CSS, p.frente), resolverHex(CSS, p.fundo)),
-  })).filter((p) => passa(p.r, p.uso) === false);
+  }));
+  const reprovados = pares.filter((p) => !p.proibido && passa(p.r, p.uso) === false);
+  const proibidos = pares.filter((p) => p.proibido);
 
   return (
     <main className="container">
@@ -143,22 +145,25 @@ export default function DesignPage() {
           </dl>
         </div>
 
-        <aside className={s.aviso} aria-labelledby="pendencias">
-          <h3 id="pendencias">Pendências de contraste</h3>
-          {reprovados.length === 0 ? (
-            <p>Todos os pares com meta passam.</p>
-          ) : (
-            <ul>
-              {reprovados.map((p) => (
-                <li key={`${p.frente}-${p.fundo}`}>
-                  <code>--{p.frente}</code> sobre <code>--{p.fundo}</code>: {formatarRazao(p.r)} ({p.onde})
-                </li>
-              ))}
-            </ul>
-          )}
-          <p className="rotulo">
-            Relatório completo em docs/contraste.md. Ajustes de paleta aguardam decisão.
+        <aside className={s.aviso} aria-labelledby="contraste-regras">
+          <h3 id="contraste-regras">Regras de contraste</h3>
+          <p>
+            {reprovados.length === 0
+              ? "Todos os pares permitidos passam na meta."
+              : `${reprovados.length} par(es) permitido(s) reprovado(s): ver docs/contraste.md.`}
           </p>
+          <p>Combinações proibidas na interface:</p>
+          <ul>
+            {proibidos.map((p) => (
+              <li key={`${p.frente}-${p.fundo}`}>
+                <code>--{p.frente}</code> sobre <code>--{p.fundo}</code>: {formatarRazao(p.r)} ({p.onde})
+              </li>
+            ))}
+            <li>
+              <code>--cor-ocre</code> como texto ou como série de dados (só detalhe gráfico)
+            </li>
+          </ul>
+          <p className="rotulo">Relatório completo em docs/contraste.md.</p>
         </aside>
       </section>
 

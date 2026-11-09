@@ -5,7 +5,8 @@ import type { Uso } from "./contraste";
  * Ao criar um componente com uma combinação nova, adicione o par aqui
  * e rode `pnpm contraste` para atualizar docs/contraste.md.
  */
-export type Par = { frente: string; fundo: string; uso: Uso; onde: string };
+/** `proibido`: combinação reprovada que a interface não usa (decisão registrada em docs/decisoes.md). */
+export type Par = { frente: string; fundo: string; uso: Uso; onde: string; proibido?: true };
 
 export const PARES: Par[] = [
   // Texto sobre papel
@@ -24,7 +25,7 @@ export const PARES: Par[] = [
   // Texto sobre areia
   { frente: "texto", fundo: "cor-areia", uso: "texto", onde: "Texto sobre bloco areia" },
   { frente: "texto-suave", fundo: "cor-areia", uso: "texto", onde: "Metadados sobre bloco areia" },
-  { frente: "link", fundo: "cor-areia", uso: "texto", onde: "Link sobre bloco areia" },
+  { frente: "link", fundo: "cor-areia", uso: "texto", onde: "Link sobre bloco areia", proibido: true },
 
   // Invertidos (botão primário no hover, blocos estruturais)
   { frente: "cor-papel", fundo: "cor-grafite", uso: "texto", onde: "Botão primário / bloco invertido" },
@@ -52,7 +53,6 @@ export const PARES: Par[] = [
   { frente: "d-3", fundo: "fundo", uso: "interface", onde: "Série de dados 3" },
   { frente: "d-4", fundo: "fundo", uso: "interface", onde: "Série de dados 4" },
   { frente: "d-5", fundo: "fundo", uso: "interface", onde: "Série de dados 5" },
-  { frente: "d-6", fundo: "fundo", uso: "interface", onde: "Série de dados 6" },
   { frente: "d-pos", fundo: "fundo", uso: "interface", onde: "Variação positiva" },
   { frente: "d-neg", fundo: "fundo", uso: "interface", onde: "Variação negativa" },
 ];

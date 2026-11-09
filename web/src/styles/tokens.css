@@ -71,13 +71,12 @@
 
 /* Paleta de dados (separada da marca) — PLANO-DESIGN.md seção 6 */
 :root {
-  /* Categórica (até 6 séries) */
+  /* Categórica (até 5 séries). Ocre saiu: 1,97:1 sobre papel (decisão 2026-11-09) */
   --d-1: #294d68; /* azul profundo */
   --d-2: #c8742a; /* laranja queimado */
   --d-3: #5e8c7b; /* verde-água fosco */
   --d-4: #8a5a8c; /* ameixa */
-  --d-5: #d7a64b; /* ocre */
-  --d-6: #6b6b63; /* cinza quente */
+  --d-5: #6b6b63; /* cinza quente */
 
   /* Divergente (variação positiva/negativa) */
   --d-pos: #2f6f8f;

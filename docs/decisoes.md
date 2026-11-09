@@ -14,5 +14,8 @@ Formato: data · decisão · motivo · como reverter. Decisões marcadas [DECIS�
 - **Relatório de contraste** gerado por script (`pnpm contraste`). O CI falha se o relatório ficar desatualizado, mas **não** falha por par reprovado: os reprovados ficam como pendência de decisão, porque trocar cor exige OK (PLANO-DESIGN 13.3).
 - **Fronteiras e nomes disputados:** a definir na Fase 1 junto com a fonte de geometrias.
 
-## Pendências abertas
-- Contraste: `--link` sobre `--cor-areia` (4,22:1) e `--d-5` (ocre) como série de dados sobre papel (1,97:1). Ver `docs/contraste.md`.
+## 2026-11-09 · Ajustes de contraste (aprovados pelo dono)
+
+- **Ocre saiu da paleta categórica de dados.** Como série sobre papel dava 1,97:1 (meta 3:1). A categórica passa a ter **5 cores**: `--d-1` azul profundo, `--d-2` laranja queimado, `--d-3` verde-água fosco, `--d-4` ameixa, `--d-5` cinza quente (antes `--d-6`, renumerado). `--cor-ocre` continua existindo como detalhe gráfico de marca. Para mais de 5 séries, agrupar em "outros" ou usar destaque seletivo. Desvio do PLANO-DESIGN §6 ("até 6 séries"). Reverter: devolver `--d-5: #D7A64B` e `--d-6: #6B6B63` em `tokens.css`.
+- **Link sobre areia é combinação proibida.** `--link` sobre `--cor-areia` dá 4,22:1 (meta 4,5:1). A paleta não muda: blocos em areia não levam link. Se um bloco areia precisar de ação, usar texto `--texto` com sublinhado ou levar o link para fora do bloco. O par fica marcado como `proibido` em `pares-contraste.ts`.
+- **CI de contraste ficou mais rígido:** agora falha se qualquer par permitido reprovar.
