@@ -1,0 +1,13 @@
+/* Contêiner sempre quadrado (o lado é o menor entre a largura disponível e 70% da altura da tela).
+   Sem máscara: o MapLibre desenha a esfera sobre fundo transparente. */
+.globo {
+  position: relative;
+  width: min(100%, 70vh);
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+}
+
+.globo:focus-within {
+  outline: 2px solid var(--foco);
+  outline-offset: 4px;
+}
