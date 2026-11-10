@@ -1,0 +1,53 @@
+name: Dados (indicadores)
+
+# Atualiza os indicadores no banco de produção (Neon) e checa a saúde da ingestão.
+# Semanal: só Banco Mundial. Mensal (dia 2): inclui o FMI, que só muda em abril e outubro
+# (os termos do FMI proíbem download em massa automatizado; a consulta é pequena e dirigida).
+# Se falhar, o GitHub avisa por e-mail quem configurou o agendamento.
+on:
+  schedule:
+    - cron: "23 7 * * 1"   # segunda, 07:23 UTC
+    - cron: "41 8 2 * *"   # dia 2 de cada mês, 08:41 UTC (com FMI)
+  workflow_dispatch:
+    inputs:
+      com_fmi:
+        description: "Consultar também o FMI"
+        type: boolean
+        default: true
+      importar_publicacao:
+        description: "Importar notícias publicadas de db/seeds/noticias_publicadas.json (primeira carga)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: banco-producao
+  cancel-in-progress: false
+
+jobs:
+  carga:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: ingest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - name: Banco configurado?
+        run: |
+          if [ -z "$DATABASE_URL" ]; then echo "::error::Segredo DATABASE_URL não configurado (ver docs/deploy.md)"; exit 1; fi
+      - name: Carga de indicadores
+        run: |
+          if [ "${{ github.event.schedule }}" = "41 8 2 * *" ] || [ "${{ inputs.com_fmi }}" = "true" ]; then
+            uv run python -m jobs.carga --sem-geo
+          else
+            uv run python -m jobs.carga --sem-geo --sem-fmi
+          fi
+      - name: Importar publicação
+        if: ${{ inputs.importar_publicacao }}
+        run: uv run python -m jobs.publicacao importar
+      - name: Saúde da ingestão
+        run: uv run python -m jobs.saude

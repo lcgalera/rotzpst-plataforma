@@ -1,0 +1,32 @@
+name: Notícias (coleta)
+
+# Coleta os feeds da Agência Brasil duas vezes por dia e checa a saúde da ingestão.
+# A análise por IA NÃO roda aqui: é feita pelo agente do Claude Code (assinatura) e revisada por uma pessoa.
+on:
+  schedule:
+    - cron: "37 9,21 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: banco-producao
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: ingest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - name: Banco configurado?
+        run: |
+          if [ -z "$DATABASE_URL" ]; then echo "::error::Segredo DATABASE_URL não configurado (ver docs/deploy.md)"; exit 1; fi
+      - run: uv run python -m jobs.noticias coletar
+      - name: Saúde da ingestão
+        run: uv run python -m jobs.saude
