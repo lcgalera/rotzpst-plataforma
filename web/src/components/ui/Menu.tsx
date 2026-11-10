@@ -6,14 +6,21 @@ import s from "./Menu.module.css";
 
 export type ItemMenu = { href: string; rotulo: string };
 
-/** Menu conciso; estado ativo por sublinhado de 2px e aria-current. */
-export function Menu({ itens, rotulo = "Principal" }: { itens: ItemMenu[]; rotulo?: string }) {
-  const caminho = usePathname();
+/** Lista do menu, sem depender da URL (serve de fallback enquanto o caminho atual não é conhecido). */
+export function MenuLista({
+  itens,
+  rotulo = "Principal",
+  caminho = null,
+}: {
+  itens: ItemMenu[];
+  rotulo?: string;
+  caminho?: string | null;
+}) {
   return (
     <nav aria-label={rotulo} className={s.menu}>
       <ul>
         {itens.map((i) => {
-          const ativo = i.href === "/" ? caminho === "/" : caminho.startsWith(i.href);
+          const ativo = caminho !== null && (i.href === "/" ? caminho === "/" : caminho.startsWith(i.href));
           return (
             <li key={i.href}>
               <Link href={i.href} aria-current={ativo ? "page" : undefined} className={s.item}>
@@ -25,4 +32,9 @@ export function Menu({ itens, rotulo = "Principal" }: { itens: ItemMenu[]; rotul
       </ul>
     </nav>
   );
+}
+
+/** Menu conciso; estado ativo por sublinhado de 2px e aria-current. Use dentro de <Suspense>. */
+export function Menu({ itens, rotulo = "Principal" }: { itens: ItemMenu[]; rotulo?: string }) {
+  return <MenuLista itens={itens} rotulo={rotulo} caminho={usePathname()} />;
 }

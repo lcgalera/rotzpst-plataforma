@@ -1,10 +1,14 @@
 import Link from "next/link";
-import { Menu } from "@/components/ui/Menu";
+import { Suspense } from "react";
+import { Menu, MenuLista } from "@/components/ui/Menu";
 import s from "./Cabecalho.module.css";
 
 const ITENS = [
   { href: "/explorar", rotulo: "Explorar" },
   { href: "/paises", rotulo: "Países" },
+  { href: "/comparar", rotulo: "Comparar" },
+  { href: "/metodologia", rotulo: "Metodologia" },
+  { href: "/busca", rotulo: "Buscar" },
 ];
 
 export function Cabecalho() {
@@ -17,7 +21,9 @@ export function Cabecalho() {
         <Link href="/" className={s.marca} aria-label="rotzx, página inicial">
           rotzx
         </Link>
-        <Menu itens={ITENS} />
+        <Suspense fallback={<MenuLista itens={ITENS} />}>
+          <Menu itens={ITENS} />
+        </Suspense>
       </div>
     </header>
   );
@@ -29,7 +35,8 @@ export function Rodape() {
       <div className="container">
         <p>
           Dados: Banco Mundial (World Development Indicators) e FMI (World Economic Outlook). Mapas: Natural
-          Earth. Cada número mostra sua fonte e a data de atualização.
+          Earth. Cada número mostra sua fonte e a data de atualização.{" "}
+          <Link href="/metodologia">Como trabalhamos</Link>.
         </p>
       </div>
     </footer>
