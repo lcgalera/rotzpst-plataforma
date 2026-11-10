@@ -114,3 +114,18 @@ Teste em protótipos equivalentes: mesma geometria, mesmas cores, seleção por 
 - **Erros que o validador não pega:** todas as citações eram literais, e mesmo assim houve distorção na *síntese* (causalidade sugerida, condições omitidas, intenção tratada como regra, escopo ampliado). O validador garante a fidelidade das citações, não a da síntese. Por isso a revisão humana é a camada que mede o que importa.
 - **Melhoria:** `news/analise/instrucoes.md` passou à versão 2, com 7 regras novas tiradas das notas da revisão. A próxima rodada mede se a taxa cai.
 - **Inconsistência na fonte:** na matéria da balança comercial de outubro, US$ 31,51 bi − US$ 24,82 bi = US$ 6,69 bi, mas o texto informa superávit de US$ 9,32 bi. Ficou registrada a decisão do dono sobre publicar.
+
+## 2026-11-10 · Fase 4: home, notícia, comparador, busca e metodologia
+
+- **Balança comercial despublicada** (pedido do dono): a análise voltou para `aguardando_revisao` com o motivo registrado na nota. A conferência com o Comex Stat (MDIC) não foi possível deste ambiente: a API (`POST https://api-comexstat.mdic.gov.br/general`, documentada em `/docs/doc.yaml`) respondeu 429 em todas as tentativas, mesmo com 15 s de intervalo, provavelmente porque o IP de saída é compartilhado. A base do MDIC já tem outubro/2026 (atualizada em 06/11/2026). Fica para o pipeline num servidor próprio.
+- **Home editorial sem texto inventado:**
+  - **Manchete** = a notícia aprovada mais recente; **"O cenário agora"** = as 4 seguintes. Hoje a ordem é só cronológica; curadoria editorial (marcar uma manchete) fica como melhoria futura.
+  - **Destaques** = calculados dos dados (maior/menor valor entre os países do piloto), usando o ano mais recente com dado para ≥ 80% deles, e cada destaque diz quantos países entraram na comparação. Ex.: a maior inflação de 2025 compara 24 países, e a Argentina fica de fora porque o Banco Mundial só tem o dado dela até 2024.
+  - **Mapa:** o bloco do mapa usa o mapa plano em SVG (leve, bom para o LCP), com link para o globo.
+- **Página de notícia** `/noticia/[id]`: só existe para análise aprovada; qualquer outro id dá 404. Sem `generateStaticParams`, porque com Cache Components ele não pode devolver lista vazia, e o CI (sem notícias) quebrava. Cada página é gerada na primeira visita e fica em cache com a tag `noticias`.
+- **Comparador** `/comparar?p=BRA&p=ARG...`: 2 a 4 países do piloto, escolhidos num formulário GET que funciona sem JavaScript e gera um link compartilhável. Um gráfico por indicador, com todos na **mesma escala**, desde 2000. A identificação nunca depende só da cor: cada país tem cor da paleta de dados **e** forma de marcador, rótulo direto no fim da linha (sem sobreposição) e tabela alternativa.
+- **Busca** `/busca?q=`: países por nome (sem acento/maiúscula) e notícias publicadas por título/resumo. O termo vai sempre como parâmetro SQL. Página `noindex`.
+- **Metodologia** `/metodologia`: fontes, licenças e indicadores lidos de `fontes_dados`/`indicadores`; taxa de erro da IA calculada do banco na hora (mesma definição e mesmo intervalo de Wilson de `docs/taxa-erro-ia.md`); limitações conhecidas.
+- **Erro:** `app/error.tsx` com o texto do PLANO-DESIGN §8 ("Não conseguimos carregar agora. Tente de novo em instantes.") e botão de tentar de novo. Testado com o banco desligado.
+- **Menu:** o realce da página atual usa `usePathname()`, que agora fica dentro de `<Suspense>` (exigência do Next 16 em rotas dinâmicas), com o mesmo menu sem realce como fallback.
+- **Acessibilidade:** axe com 0 violações em `/`, `/comparar` (vazio e com 4 países), `/busca`, `/metodologia` e `/noticia/3`; nenhuma página rola de lado a 390 px.

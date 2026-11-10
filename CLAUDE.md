@@ -33,6 +33,9 @@ Web (dentro de `web/`):
 - Dados lidos só por `src/lib/dados.ts` (`'use cache'`). Nunca usar `new Date()` em render: quebra o prerender e a honestidade da defasagem.
 - Gráficos: `components/graficos/Grafico.tsx` (sempre com tabela alternativa). Mapa plano: `components/mapa/`. Globo: `components/globo/GloboMapLibre.tsx` (carregado sob demanda).
 - Semente de CI: `db/seeds/gerar_semente_ci.sh` regenera `db/seeds/ci.sql` (dados reais, recorte).
+- Páginas: `/` (home editorial), `/explorar`, `/paises`, `/pais/[slug]`, `/noticia/[id]`, `/comparar?p=ISO3&p=...`, `/busca?q=`, `/metodologia`, `/revisao` (interno), `/design`.
+- Com Cache Components: `generateStaticParams` nunca pode devolver lista vazia; hooks de URL (`usePathname`, `useSearchParams`) só dentro de `<Suspense>`.
+- Despublicar uma notícia = voltar a análise para `aguardando_revisao` (o painel faz `updateTag('noticias')`; mudança direta no banco só aparece quando o cache expirar ou no próximo build).
 
 Ingestão (dentro de `ingest/`, com `DATABASE_URL` definida; ver `.env.example`):
 - `uv sync` · `uv run pytest` · `uv run ruff check .` · `uv run ruff format .`
