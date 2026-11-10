@@ -20,6 +20,7 @@ from dataclasses import dataclass, field
 
 import psycopg
 
+from comum import carga
 from comum.http import baixar
 
 FONTE_ID = "agencia-brasil"
@@ -160,10 +161,17 @@ def gravar(conn: psycopg.Connection, itens: list[Item]) -> tuple[int, int]:
 
 
 def coletar(conn: psycopg.Connection) -> dict[str, tuple[int, int]]:
+    """Coleta os feeds e registra a execução em `coletas` (base da checagem de saúde)."""
+    coleta_id = carga.iniciar_coleta(conn, FONTE_ID)
     resultado = {}
     vistos: set[str] = set()
-    for editoria, url in FEEDS.items():
-        itens = [i for i in interpretar_feed(baixar(url), editoria) if i.url not in vistos]
-        vistos.update(i.url for i in itens)
-        resultado[editoria] = gravar(conn, itens)
+    try:
+        for editoria, url in FEEDS.items():
+            itens = [i for i in interpretar_feed(baixar(url), editoria) if i.url not in vistos]
+            vistos.update(i.url for i in itens)
+            resultado[editoria] = gravar(conn, itens)
+    except Exception as e:
+        carga.encerrar_coleta(conn, coleta_id, linhas=None, erro=repr(e))
+        raise
+    carga.encerrar_coleta(conn, coleta_id, linhas=sum(n for n, _ in resultado.values()), erro=None)
     return resultado

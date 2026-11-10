@@ -158,3 +158,22 @@ def test_importar_revisao_respeita_regras(base):
         )
         == 1
     )
+
+
+def test_saude_aponta_coleta_velha_e_falha(base):
+    from jobs.saude import checar
+
+    agora = dt.datetime(2026, 11, 10, tzinfo=dt.UTC)
+    with base.cursor() as cur:
+        cur.execute(
+            "INSERT INTO coletas (fonte_id, iniciada_em, terminada_em, status) VALUES "
+            "('bm-wdi', %s, %s, 'ok'), ('fmi-weo', %s, %s, 'ok'), ('agencia-brasil', %s, %s, 'erro')",
+            (agora - dt.timedelta(days=30),) * 2
+            + (agora - dt.timedelta(days=1),) * 2
+            + (agora,) * 2,
+        )
+    base.commit()
+    problemas = checar(base, agora)
+    assert any("bm-wdi" in p and "30 dias" in p for p in problemas)
+    assert not any(p.startswith("fmi-weo") for p in problemas)
+    assert any("agencia-brasil: última coleta falhou" in p for p in problemas)

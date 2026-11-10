@@ -1,7 +1,9 @@
 """Carga completa da Fase 1: migrações, catálogo, geometrias, países e séries.
 
-Uso (dentro de ingest/):  DATABASE_URL=... uv run python -m jobs.carga [--sem-geo]
+Uso (dentro de ingest/):  DATABASE_URL=... uv run python -m jobs.carga [--sem-geo] [--sem-fmi]
 Idempotente: pode rodar quantas vezes quiser.
+--sem-fmi: pula o FMI (os termos do FMI proíbem download em massa automatizado; o WEO só muda em abril e
+outubro, então o agendamento semanal usa --sem-fmi e o mensal consulta o FMI).
 """
 
 from __future__ import annotations
@@ -30,6 +32,9 @@ def main(argv: list[str]) -> int:
                 f"[Banco Mundial] {cod}: {r.gravados} gravados, {r.alertas} alertas, {r.rejeitados} rejeitados"
             )
 
+        if "--sem-fmi" in argv:
+            print("[FMI WEO] pulado (--sem-fmi)")
+            return 0
         for cod, (r, leitura) in fmi_weo.carregar(conn).items():
             print(
                 f"[FMI WEO] {cod}: {r.gravados} gravados, {leitura.projecoes_descartadas} projeções descartadas, "
