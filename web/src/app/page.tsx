@@ -79,7 +79,7 @@ async function Destaques() {
         <MarcadorSecao
           modulos={[
             { forma: "circulo", cor: "azul-profundo" },
-            { forma: "semicirculo", cor: "terracota" },
+            { forma: "semicirculo", cor: "verde-mata" },
           ]}
         />{" "}
         Destaques entre os países acompanhados

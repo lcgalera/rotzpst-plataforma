@@ -24,7 +24,7 @@
   --fundo: var(--cor-papel);
   --texto: var(--cor-grafite);
   --texto-suave: var(--cor-grafite-suave);
-  --link: var(--cor-terracota-texto);
+  --link: var(--cor-azul-profundo); /* 2026-11-10: links em azul; terracota só em estados ativos */
   --foco: var(--cor-azul-profundo);
 
   /* Tipografia */

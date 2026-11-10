@@ -9,13 +9,13 @@ Metas (PLANO-DESIGN.md, seção 2): **4,50:1** para texto normal; **3,00:1** par
 |---|---|---:|---|---|---|
 | `--texto` #252622 | `--fundo` #F5F1E8 | 13,51:1 | Texto normal (4,5:1) | ✅ passa | Corpo de texto |
 | `--texto-suave` #55564F | `--fundo` #F5F1E8 | 6,58:1 | Texto normal (4,5:1) | ✅ passa | Metadados, fonte e data |
-| `--link` #9C4A33 | `--fundo` #F5F1E8 | 5,41:1 | Texto normal (4,5:1) | ✅ passa | Links e texto pequeno em terracota |
+| `--link` #294D68 | `--fundo` #F5F1E8 | 7,91:1 | Texto normal (4,5:1) | ✅ passa | Links (azul-profundo) |
 | `--cor-terracota` #B96549 | `--fundo` #F5F1E8 | 3,71:1 | Texto grande (3:1) | ✅ passa | Terracota de marca em título grande |
 | `--cor-verde-mata` #355C4B | `--fundo` #F5F1E8 | 6,69:1 | Texto normal (4,5:1) | ✅ passa | Texto em verde-mata |
 | `--cor-azul-profundo` #294D68 | `--fundo` #F5F1E8 | 7,91:1 | Texto normal (4,5:1) | ✅ passa | Texto em azul profundo |
 | `--texto` #252622 | `--cor-areia` #DDD6C9 | 10,54:1 | Texto normal (4,5:1) | ✅ passa | Texto sobre bloco areia |
 | `--texto-suave` #55564F | `--cor-areia` #DDD6C9 | 5,14:1 | Texto normal (4,5:1) | ✅ passa | Metadados sobre bloco areia |
-| `--link` #9C4A33 | `--cor-areia` #DDD6C9 | 4,22:1 | Texto normal (4,5:1) | 🚫 proibido | Link sobre bloco areia |
+| `--link` #294D68 | `--cor-areia` #DDD6C9 | 6,17:1 | Texto normal (4,5:1) | ✅ passa | Link sobre bloco areia |
 | `--cor-papel` #F5F1E8 | `--cor-grafite` #252622 | 13,51:1 | Texto normal (4,5:1) | ✅ passa | Botão primário / bloco invertido |
 | `--cor-papel` #F5F1E8 | `--cor-verde-mata` #355C4B | 6,69:1 | Texto normal (4,5:1) | ✅ passa | Texto sobre bloco verde-mata |
 | `--cor-papel` #F5F1E8 | `--cor-azul-profundo` #294D68 | 7,91:1 | Texto normal (4,5:1) | ✅ passa | Texto sobre bloco azul profundo |
@@ -37,11 +37,11 @@ Metas (PLANO-DESIGN.md, seção 2): **4,50:1** para texto normal; **3,00:1** par
 
 ## Resumo
 
-- Pares permitidos avaliados com meta: 24
+- Pares permitidos avaliados com meta: 25
 - Reprovados: 0
 
 ## Combinações proibidas
 
 Reprovam na meta e **não podem ser usadas** na interface (ver `docs/decisoes.md`).
 
-- `--link` sobre `--cor-areia` (4,22:1): Link sobre bloco areia
+Nenhuma no momento. O ocre segue restrito a detalhe gráfico: nunca texto nem série de dados.

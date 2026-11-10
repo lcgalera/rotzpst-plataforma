@@ -146,7 +146,7 @@ Teste em protótipos equivalentes: mesma geometria, mesmas cores, seleção por 
   - `NEXT_PUBLIC_SITE_URL` entra **no build**.
 - **Desempenho:** LCP de 0,69 a 0,81 s e CLS ≤ 0,034 em 4G lento simulado. O CLS de `/explorar` caiu de 0,095 para 0,001 reservando o espaço do globo. Detalhes em `docs/revisao-design.md`.
 - **Daltonismo:** novo teste no CI (`docs/daltonismo.md`). Um alerta sem efeito hoje: `--d-3` × `--d-5` em deuteranopia (o comparador usa só `--d-1` a `--d-4`).
-- **Revisão "o que evitar":** risco moderado de parecer a identidade da Anthropic (creme + terracota + serifa). Sugestão registrada, sem mudança de paleta antes do OK do dono.
+- **Revisão "o que evitar":** risco moderado de parecer a identidade da Anthropic (creme + terracota + serifa). Resolvido em 2026-11-10 com o rebalanceamento da paleta (ver abaixo).
 - **Jobs agendados (GitHub Actions)**, porque daqui o GDELT e o MDIC recusam por limite de requisições:
   - notícias 2× ao dia;
   - Banco Mundial semanal;
@@ -155,3 +155,13 @@ Teste em protótipos equivalentes: mesma geometria, mesmas cores, seleção por 
 - **A checagem de saúde achou um defeito real:** a coleta de notícias não era registrada em `coletas`. Corrigido.
 - **Migração do conteúdo publicado** (`jobs.publicacao`): o repositório é público, então o arquivo leva só as análises aprovadas completas; das demais, só status e erros (para a taxa de erro). Sem texto integral e sem as notas do revisor.
 - **Análise de notícias em produção:** continua manual, numa sessão do Claude Code no computador do dono, com a `DATABASE_URL` num `.env` local. Não foi para uma tarefa agendada na nuvem porque isso exigiria guardar a senha do banco como variável em texto puro no ambiente.
+
+## 2026-11-10: Rebalanceamento da paleta (aprovado pelo dono)
+
+Resposta ao risco apontado na revisão "o que evitar" (creme + terracota + serifa lembrava a identidade da Anthropic).
+
+- **Links em azul-profundo** (`--link: var(--cor-azul-profundo)`): 7,91:1 sobre papel e 6,17:1 sobre areia. Com isso caiu a proibição de link sobre areia.
+- **Faixa verde-mata** de 4px no topo do cabeçalho do site.
+- **Marcadores de seção** em verde-mata (home) e azul-profundo (país).
+- **Terracota só em estados ativos e alertas:** aba ativa, botão pressionado, marca de reprovação no `/design` e alerta da revisão.
+- Isto altera a orientação de "cor em texto" da seção 1 do PLANO-DESIGN, com o OK explícito do dono. `--cor-terracota-texto` continua nos tokens, sem uso atual em links.

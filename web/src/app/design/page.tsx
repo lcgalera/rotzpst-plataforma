@@ -221,8 +221,8 @@ export default function DesignPage() {
             </p>
             <p>
               A medida desta coluna fica entre 65 e 72 caracteres, com entrelinha de 1,6, para leitura
-              confortável em textos longos. <a href="#tipografia">Links usam a terracota de texto</a>, mais
-              escura que a de marca.
+              confortável em textos longos. <a href="#tipografia">Links usam o azul-profundo</a>, com
+              contraste alto sobre papel e areia; a terracota fica para estados ativos.
             </p>
           </article>
           <aside className={`col-3 ${s.kpiExemplo}`}>

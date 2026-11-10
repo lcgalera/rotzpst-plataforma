@@ -46,7 +46,7 @@ describe("tokens.css", () => {
 
   it("resolve aliases semânticos", () => {
     expect(lerAliases(CSS).texto).toBe("cor-grafite");
-    expect(resolverHex(CSS, "--link")).toBe("#9C4A33");
+    expect(resolverHex(CSS, "--link")).toBe("#294D68");
     expect(resolverHex(CSS, "foco")).toBe("#294D68");
   });
 
@@ -59,7 +59,12 @@ describe("tokens.css", () => {
       const r = razaoContraste(resolverHex(CSS, p.frente), resolverHex(CSS, p.fundo));
       if (!p.proibido) expect(passa(r, p.uso), `${p.frente} sobre ${p.fundo}`).not.toBe(false);
     }
-    expect(PARES.some((p) => p.proibido && p.frente === "link" && p.fundo === "cor-areia")).toBe(true);
+    // Desde 2026-11-10 o link é azul-profundo e passa também sobre areia (antes era proibido).
+    const linkAreia = PARES.find((p) => p.frente === "link" && p.fundo === "cor-areia")!;
+    expect(linkAreia.proibido).toBeUndefined();
+    expect(passa(razaoContraste(resolverHex(CSS, "link"), resolverHex(CSS, "cor-areia")), "texto")).toBe(
+      true,
+    );
   });
 
   it("todo par de contraste aponta para tokens existentes", () => {

@@ -12,7 +12,7 @@ export const PARES: Par[] = [
   // Texto sobre papel
   { frente: "texto", fundo: "fundo", uso: "texto", onde: "Corpo de texto" },
   { frente: "texto-suave", fundo: "fundo", uso: "texto", onde: "Metadados, fonte e data" },
-  { frente: "link", fundo: "fundo", uso: "texto", onde: "Links e texto pequeno em terracota" },
+  { frente: "link", fundo: "fundo", uso: "texto", onde: "Links (azul-profundo)" },
   {
     frente: "cor-terracota",
     fundo: "fundo",
@@ -25,7 +25,7 @@ export const PARES: Par[] = [
   // Texto sobre areia
   { frente: "texto", fundo: "cor-areia", uso: "texto", onde: "Texto sobre bloco areia" },
   { frente: "texto-suave", fundo: "cor-areia", uso: "texto", onde: "Metadados sobre bloco areia" },
-  { frente: "link", fundo: "cor-areia", uso: "texto", onde: "Link sobre bloco areia", proibido: true },
+  { frente: "link", fundo: "cor-areia", uso: "texto", onde: "Link sobre bloco areia" },
 
   // Invertidos (botão primário no hover, blocos estruturais)
   { frente: "cor-papel", fundo: "cor-grafite", uso: "texto", onde: "Botão primário / bloco invertido" },

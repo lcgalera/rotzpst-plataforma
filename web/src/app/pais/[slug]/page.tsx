@@ -185,7 +185,7 @@ async function Conteudo({ params }: { params: PageProps<"/pais/[slug]">["params"
           <MarcadorSecao
             modulos={[
               { forma: "semicirculo", cor: "verde-mata" },
-              { forma: "quarto", cor: "terracota", rotacao: 90 },
+              { forma: "quarto", cor: "azul-profundo", rotacao: 90 },
             ]}
           />{" "}
           Séries históricas

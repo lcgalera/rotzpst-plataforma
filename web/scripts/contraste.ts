@@ -67,7 +67,7 @@ ${linhas
 
 Reprovam na meta e **não podem ser usadas** na interface (ver \`docs/decisoes.md\`).
 
-${proibidos.map((l) => `- \`--${l.frente}\` sobre \`--${l.fundo}\` (${formatarRazao(l.r)}): ${l.onde}`).join("\n")}
+${proibidos.length ? proibidos.map((l) => `- \`--${l.frente}\` sobre \`--${l.fundo}\` (${formatarRazao(l.r)}): ${l.onde}`).join("\n") : "Nenhuma no momento. O ocre segue restrito a detalhe gráfico: nunca texto nem série de dados."}
 `;
 
 if (process.argv.includes("--checar")) {

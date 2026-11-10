@@ -1,4 +1,5 @@
 .cabecalho {
+  border-top: var(--e-1) solid var(--cor-verde-mata); /* faixa estrutural da marca */
   border-bottom: var(--linha);
 }
 

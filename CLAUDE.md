@@ -12,7 +12,7 @@ Plataforma editorial de economia, geopolítica e inteligência global. Planos co
 5. **Fato separado de interpretação.** Conteúdo de IA rotulado e sempre com link para as fontes originais. Nunca republicar texto integral de terceiros.
 6. **Pesquisar a documentação oficial** de cada fonte/API antes de integrar e registrar em `docs/fontes.md` (formato, frequência, licença).
 7. **Só tokens no visual:** cores, tamanhos, espaços e movimento vêm de `web/src/styles/tokens.css`. Um teste (`regra-tokens.test.ts`) barra cor solta.
-   - **Proibido:** link sobre fundo areia; ocre como texto ou como série de dados. Lista completa em `docs/contraste.md`.
+   - **Proibido:** ocre como texto ou como série de dados. Links são azul-profundo; terracota só em estados ativos e alertas. Lista completa em `docs/contraste.md`.
 8. **Commits pequenos em português.** Decisões relevantes em `docs/decisoes.md`.
 9. **Segredos só em variáveis de ambiente**; manter `.env.example` atualizado.
 10. **Simplicidade primeiro:** nada de microserviços ou infra complexa antes de haver usuários.
