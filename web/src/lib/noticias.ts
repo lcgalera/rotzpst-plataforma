@@ -29,7 +29,7 @@ export type NoticiaPublicada = {
 
 export const TAG_NOTICIAS = "noticias";
 
-export async function noticiasDoPais(iso3: string, limite = 12): Promise<NoticiaPublicada[]> {
+export async function noticiasDoPais(iso3: string, limite = 30): Promise<NoticiaPublicada[]> {
   "use cache";
   cacheLife("hours");
   cacheTag(TAG_NOTICIAS);
