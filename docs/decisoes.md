@@ -129,3 +129,29 @@ Teste em protótipos equivalentes: mesma geometria, mesmas cores, seleção por 
 - **Erro:** `app/error.tsx` com o texto do PLANO-DESIGN §8 ("Não conseguimos carregar agora. Tente de novo em instantes.") e botão de tentar de novo. Testado com o banco desligado.
 - **Menu:** o realce da página atual usa `usePathname()`, que agora fica dentro de `<Suspense>` (exigência do Next 16 em rotas dinâmicas), com o mesmo menu sem realce como fallback.
 - **Acessibilidade:** axe com 0 violações em `/`, `/comparar` (vazio e com 4 países), `/busca`, `/metodologia` e `/noticia/3`; nenhuma página rola de lado a 390 px.
+
+## 2026-11-10 · Fase 5: qualidade e lançamento
+
+- **Hospedagem (decisão do dono):**
+  - **Vercel Hobby**, grátis e só para uso não comercial; a Vercel também pode usar o conteúdo de projetos Hobby para treinar IA, segundo os termos.
+  - **Neon Free**: 1 GB; dorme após 5 min sem uso; não cobra excedente, para no limite.
+  - **Vercel Web Analytics**: sem cookies; dados de sessão descartados em 24 h.
+  - Endereço **.vercel.app**.
+  - Passo a passo em `docs/deploy.md`.
+- **Analytics com privacidade:** o filtro `beforeSend` tira os parâmetros da URL (o termo digitado na busca não é enviado) e não mede o painel `/revisao`. A página `/privacidade` descreve o que é coletado. **Falta o contato do controlador** (LGPD): pendente com o dono.
+- **SEO:**
+  - `sitemap.xml` com páginas fixas, todos os países e as notícias publicadas; datas tiradas dos dados.
+  - `robots.txt` bloqueia `/revisao`, `/busca` e `/design`.
+  - Open Graph, link canônico e dados estruturados: `Dataset` nas páginas de país (com fontes e licenças) e `Article` nas notícias, com `isBasedOn` apontando o original e o aviso de IA.
+  - `NEXT_PUBLIC_SITE_URL` entra **no build**.
+- **Desempenho:** LCP de 0,69 a 0,81 s e CLS ≤ 0,034 em 4G lento simulado. O CLS de `/explorar` caiu de 0,095 para 0,001 reservando o espaço do globo. Detalhes em `docs/revisao-design.md`.
+- **Daltonismo:** novo teste no CI (`docs/daltonismo.md`). Um alerta sem efeito hoje: `--d-3` × `--d-5` em deuteranopia (o comparador usa só `--d-1` a `--d-4`).
+- **Revisão "o que evitar":** risco moderado de parecer a identidade da Anthropic (creme + terracota + serifa). Sugestão registrada, sem mudança de paleta antes do OK do dono.
+- **Jobs agendados (GitHub Actions)**, porque daqui o GDELT e o MDIC recusam por limite de requisições:
+  - notícias 2× ao dia;
+  - Banco Mundial semanal;
+  - FMI mensal: os termos proíbem download em massa automatizado, e o WEO só muda em abril e outubro.
+  - Um job `jobs.saude` falha (e o GitHub avisa por e-mail) se uma coleta falhou ou ficou velha, ou se há análises paradas há mais de 7 dias.
+- **A checagem de saúde achou um defeito real:** a coleta de notícias não era registrada em `coletas`. Corrigido.
+- **Migração do conteúdo publicado** (`jobs.publicacao`): o repositório é público, então o arquivo leva só as análises aprovadas completas; das demais, só status e erros (para a taxa de erro). Sem texto integral e sem as notas do revisor.
+- **Análise de notícias em produção:** continua manual, numa sessão do Claude Code no computador do dono, com a `DATABASE_URL` num `.env` local. Não foi para uma tarefa agendada na nuvem porque isso exigiria guardar a senha do banco como variável em texto puro no ambiente.
