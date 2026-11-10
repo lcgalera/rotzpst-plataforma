@@ -36,7 +36,7 @@ export function Rodape() {
         <p>
           Dados: Banco Mundial (World Development Indicators) e FMI (World Economic Outlook). Mapas: Natural
           Earth. Cada número mostra sua fonte e a data de atualização.{" "}
-          <Link href="/metodologia">Como trabalhamos</Link>.
+          <Link href="/metodologia">Como trabalhamos</Link> · <Link href="/privacidade">Privacidade</Link>.
         </p>
       </div>
     </footer>

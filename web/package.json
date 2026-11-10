@@ -15,9 +15,12 @@
     "contraste:checar": "node scripts/contraste.ts --checar",
     "geo": "cp ../data/geo/countries-110m.json ../data/geo/countries-50m.json ../data/geo/LICENSE-world-atlas.txt public/geo/",
     "silhueta": "node scripts/silhueta-brasil.ts",
-    "vendor": "cp node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs public/vendor/maplibre-gl-worker-6.17.0.mjs"
+    "vendor": "cp node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs public/vendor/maplibre-gl-worker-6.17.0.mjs",
+    "daltonismo": "node scripts/daltonismo.ts",
+    "daltonismo:checar": "node scripts/daltonismo.ts --checar"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
     "d3-array": "^3.2.5",
     "d3-geo": "^3.1.2",
     "d3-scale": "^4.0.3",
