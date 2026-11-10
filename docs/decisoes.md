@@ -106,3 +106,11 @@ Teste em protótipos equivalentes: mesma geometria, mesmas cores, seleção por 
 - **Revisão humana obrigatória:** painel `/revisao` com Basic Auth (usuário `revisor`, senha em `REVISAO_SENHA`; sem senha o painel fica fechado). A credencial é conferida de novo dentro da server action, porque o `proxy` do Next é só uma checagem otimista. Só análises **aprovadas** aparecem no site, com o rótulo "Resumo gerado por IA e revisado por uma pessoa" e link para o original.
 - **Taxa de erro:** medida na revisão humana, com categorias de erro marcáveis inclusive ao aprovar. O relatório `docs/taxa-erro-ia.md` usa intervalo de Wilson de 95% e avisa quando a amostra tem menos de 20 revisões. Publicação automática só depois de medir (PLANO §6).
 - **Agrupamento por evento:** semelhança de títulos (Jaccard ≥ 0,5 em até 72 h). Simples de propósito; a revisão pega o que escapar.
+
+## 2026-11-10 · Fase 3: resultado da primeira revisão humana
+
+- **Amostra:** 20 análises (lote de 09/11/2026), geradas pelo agente do Claude Code (`claude-opus-5-5`). Todas passaram no validador automático. A revisão foi feita pelo dono numa página privada, e as decisões foram importadas com `jobs/importar_revisao.py`.
+- **Resultado:** 17 aprovadas, 3 rejeitadas, 1 aprovada com erro marcado. **Taxa de erro: 20,0% (IC 95%: 8,1% a 41,6%)**. As 3 rejeições foram por fato distorcido no bloco de impacto (generalização, exceções omitidas, escopo exagerado). Isso está longe de permitir publicação automática: a revisão humana continua obrigatória.
+- **Erros que o validador não pega:** todas as citações eram literais, e mesmo assim houve distorção na *síntese* (causalidade sugerida, condições omitidas, intenção tratada como regra, escopo ampliado). O validador garante a fidelidade das citações, não a da síntese. Por isso a revisão humana é a camada que mede o que importa.
+- **Melhoria:** `news/analise/instrucoes.md` passou à versão 2, com 7 regras novas tiradas das notas da revisão. A próxima rodada mede se a taxa cai.
+- **Inconsistência na fonte:** na matéria da balança comercial de outubro, US$ 31,51 bi − US$ 24,82 bi = US$ 6,69 bi, mas o texto informa superávit de US$ 9,32 bi. Ficou registrada a decisão do dono sobre publicar.
