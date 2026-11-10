@@ -45,6 +45,7 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm contraste:checar
+      - run: pnpm daltonismo:checar
       - run: pnpm build
 
   ingest:
