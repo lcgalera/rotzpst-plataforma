@@ -1,0 +1,1340 @@
+{
+ "versao": 1,
+ "noticias": [
+  {
+   "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/derrota-de-trump-coloca-em-xeque-relacao-historica-dos-eua-com-israel",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707849 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Derrota de Trump coloca em xeque relação histórica dos EUA com Israel",
+   "veiculo": "Agência Brasil",
+   "autor": "Lucas Pordeus León  - Repórter da Agência Brasil",
+   "editoria": "internacional",
+   "tags": [
+    "Internacional",
+    "EUA",
+    "Israel",
+    "Donald Trump",
+    "Democratas",
+    "republicanos",
+    "eleições dos EUA"
+   ],
+   "publicado_em": "2026-11-05T19:55:00+00:00",
+   "palavras": 929,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-quer-economia-arrumada-para-atrair-investimentos",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707875 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Lula quer “economia arrumada” para atrair investimentos",
+   "veiculo": "Agência Brasil",
+   "autor": "Marcelo Brandão - Repórter da Agência Brasil",
+   "editoria": "politica",
+   "tags": [
+    "Política",
+    "Lula",
+    "minerais críticos",
+    "Investimento",
+    "responsabilidade fiscal"
+   ],
+   "publicado_em": "2026-11-05T22:07:00+00:00",
+   "palavras": 359,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-vai-criar-ministerio-da-seguranca-publica-com-medida-provisoria",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707887 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Lula vai criar Ministério da Segurança Pública com Medida Provisória",
+   "veiculo": "Agência Brasil",
+   "autor": "Marcelo Brandão - repórter da Agência Brasil",
+   "editoria": "politica",
+   "tags": [
+    "Política",
+    "Ministério da Segurança Pública",
+    "Lula",
+    "Crime Organizado"
+   ],
+   "publicado_em": "2026-11-06T00:15:00+00:00",
+   "palavras": 366,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/ibge-confirma-crescimento-de-34-da-economia-em-2024",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707930 at https://agenciabrasil.ebc.com.br",
+   "titulo": "IBGE confirma crescimento de 3,4% da economia em 2024",
+   "veiculo": "Agência Brasil",
+   "autor": "Bruno de Freitas Moura - Repórter da Agência Brasil",
+   "editoria": "economia",
+   "tags": [
+    "Economia",
+    "IBGE",
+    "Economia Brasileira",
+    "PIB",
+    "mecado financeiro",
+    "relatório Focus",
+    "bc"
+   ],
+   "publicado_em": "2026-11-06T13:59:00+00:00",
+   "palavras": 577,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/eleitores-dos-eua-derrotam-big-techs-e-acoes-de-ia-despencam",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707946 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Eleitores dos EUA derrotam big techs e ações de IA despencam",
+   "veiculo": "Agência Brasil",
+   "autor": "Lucas Pordeus León - repórter da Agência Brasil",
+   "editoria": "internacional",
+   "tags": [
+    "Internacional",
+    "Estados Unidos",
+    "Donald Trump",
+    "big techs",
+    "inteligência artificial",
+    "Data centers",
+    "eleições nos EUA"
+   ],
+   "publicado_em": "2026-11-06T16:12:00+00:00",
+   "palavras": 913,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/cnpe-cria-grupo-para-elaborar-estrategia-nacional-de-eletromobilidade",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707949 at https://agenciabrasil.ebc.com.br",
+   "titulo": "CNPE cria grupo para elaborar estratégia nacional de eletromobilidade",
+   "veiculo": "Agência Brasil",
+   "autor": "Pedro Peduzzi - Repórter da Agência Brasil",
+   "editoria": "economia",
+   "tags": [
+    "Economia",
+    "CNPE",
+    "estratégia nacional",
+    "Eletromobilidade"
+   ],
+   "publicado_em": "2026-11-06T16:41:00+00:00",
+   "palavras": 326,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-quer-levar-brasil-condicao-de-pais-desenvolvido-em-quatro-anos",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707957 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Lula quer levar Brasil à condição de país desenvolvido em quatro anos",
+   "veiculo": "Agência Brasil",
+   "autor": "Pedro Peduzzi - Repórter da Agência Brasil",
+   "editoria": "politica",
+   "tags": [
+    "Política",
+    "CNPE",
+    "Lula",
+    "energia limpa",
+    "minerais críticos"
+   ],
+   "publicado_em": "2026-11-06T18:57:00+00:00",
+   "palavras": 593,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/balanca-comercial-tem-maior-superavit-para-outubro-desde-1989",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707959 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Balança comercial tem maior superávit para outubro desde 1989",
+   "veiculo": "Agência Brasil",
+   "autor": "Wellton Máximo - Repórter da Agência Brasil",
+   "editoria": "economia",
+   "tags": [
+    "Economia",
+    "balança comercial",
+    "exportações",
+    "MDIC",
+    "importações"
+   ],
+   "publicado_em": "2026-11-06T19:43:00+00:00",
+   "palavras": 707,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/brasil-tem-maior-juro-real-do-mundo-seguido-por-turquia-e-argentina",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707958 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Brasil tem maior juro real do mundo, seguido por Turquia e Argentina",
+   "veiculo": "Agência Brasil",
+   "autor": "Lucas Pordeus León - Repórter da Agência Brasil",
+   "editoria": "economia",
+   "tags": [
+    "Economia",
+    "juros",
+    "Copom",
+    "banco central",
+    "inflação"
+   ],
+   "publicado_em": "2026-11-06T19:51:00+00:00",
+   "palavras": 448,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/sem-posicao-do-senado-regras-sobre-flavio-seguem-indefinidas",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707980 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Sem posição do Senado, regras sobre Flávio seguem indefinidas",
+   "veiculo": "Agência Brasil",
+   "autor": "Alex Rodrigues - Repórter da Agência Brasil",
+   "editoria": "politica",
+   "tags": [
+    "Política",
+    "Flávio Bolsonaro",
+    "Senado"
+   ],
+   "publicado_em": "2026-11-06T20:51:00+00:00",
+   "palavras": 877,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-sanciona-exame-que-ira-avaliar-qualidade-de-alunos-de-medicina",
+   "fonte_id": "agencia-brasil",
+   "guid": "1708000 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Lula sanciona exame que irá avaliar qualidade de alunos de medicina",
+   "veiculo": "Agência Brasil",
+   "autor": "Luiz Claudio Ferreira - Repórter da Agência Brasil",
+   "editoria": "politica",
+   "tags": [
+    "Política",
+    "Enamed",
+    "Lula",
+    "Medicina",
+    "Cursos de Medicina"
+   ],
+   "publicado_em": "2026-11-06T21:57:00+00:00",
+   "palavras": 793,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/lula-vai-filipinas-buscando-estreitar-vinculo-com-bloco-asiatico",
+   "fonte_id": "agencia-brasil",
+   "guid": "1708024 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Lula vai às Filipinas buscando estreitar vínculo com bloco asiático",
+   "veiculo": "Agência Brasil",
+   "autor": "Marcelo Brandão - repórter da Agência Brasil",
+   "editoria": "internacional",
+   "tags": [
+    "Internacional",
+    "Lula",
+    "Asean",
+    "sudeste asiático",
+    "Filipinas"
+   ],
+   "publicado_em": "2026-11-07T00:16:00+00:00",
+   "palavras": 495,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/cartorios-fazem-mutirao-para-prevenir-golpes-na-compra-de-imoveis",
+   "fonte_id": "agencia-brasil",
+   "guid": "1708013 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Cartórios fazem mutirão para prevenir golpes na compra de imóveis",
+   "veiculo": "Agência Brasil",
+   "autor": "Agência Brasil",
+   "editoria": "economia",
+   "tags": [
+    "Economia",
+    "Venda de Imóveis",
+    "Cartórios",
+    "Fraudes",
+    "Colégio Notarial do Brasil"
+   ],
+   "publicado_em": "2026-11-07T11:31:00+00:00",
+   "palavras": 651,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/vr-e-va-podem-ser-aceitos-em-mais-maquininhas-partir-deste-sabado",
+   "fonte_id": "agencia-brasil",
+   "guid": "1707961 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Vales refeição e alimentação podem ser aceitos em mais maquininhas",
+   "veiculo": "Agência Brasil",
+   "autor": "Wellton Máximo - Repórter da Agência Brasil",
+   "editoria": "economia",
+   "tags": [
+    "Economia",
+    "Vale refeição",
+    "vale alimentação",
+    "Direito do Trabalhador",
+    "Programa de Alimentação do Trabalhador"
+   ],
+   "publicado_em": "2026-11-07T12:03:00+00:00",
+   "palavras": 998,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/pf-investiga-ameacas-recebidas-pela-deputada-eleita-ana-elisa",
+   "fonte_id": "agencia-brasil",
+   "guid": "1708119 at https://agenciabrasil.ebc.com.br",
+   "titulo": "PF investiga ameaças recebidas pela deputada eleita Ana Elisa",
+   "veiculo": "Agência Brasil",
+   "autor": "Agência Brasil",
+   "editoria": "politica",
+   "tags": [
+    "Política",
+    "PF",
+    "Ana Elisa",
+    "ameaças de morte"
+   ],
+   "publicado_em": "2026-11-08T22:21:00+00:00",
+   "palavras": 292,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/movimentacoes-no-senado-antecipam-disputa-pelo-comando-da-casa-em-2027",
+   "fonte_id": "agencia-brasil",
+   "guid": "1708121 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Movimentações no Senado antecipam disputa pelo comando da Casa em 2027",
+   "veiculo": "Agência Brasil",
+   "autor": "Pedro Rafael Vilela - Repórter da Agência Brasil",
+   "editoria": "politica",
+   "tags": [
+    "Política",
+    "Senado",
+    "presidência do Senado",
+    "Eleições"
+   ],
+   "publicado_em": "2026-11-08T23:37:00+00:00",
+   "palavras": 653,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-busca-conciliacao-e-se-compromete-com-responsabilidade-fiscal",
+   "fonte_id": "agencia-brasil",
+   "guid": "1708131 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Lula se compromete com responsabilidade fiscal e busca conciliação",
+   "veiculo": "Agência Brasil",
+   "autor": "Guilherme Jeronymo - Repórter da Agência Brasil",
+   "editoria": "politica",
+   "tags": [
+    "Política",
+    "pronunciamento",
+    "Lula",
+    "responsabilidade fiscal"
+   ],
+   "publicado_em": "2026-11-09T01:16:00+00:00",
+   "palavras": 684,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-da-selic-para-1375-em-2026",
+   "fonte_id": "agencia-brasil",
+   "guid": "1708144 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Mercado eleva projeção da Selic para 13,75% em 2026",
+   "veiculo": "Agência Brasil",
+   "autor": "Pedro Peduzzi - Repórter da Agência Brasil",
+   "editoria": "economia",
+   "tags": [
+    "Economia",
+    "bc",
+    "Inflação",
+    "Mercado Financeiro",
+    "Juros",
+    "IPCA",
+    "Selic",
+    "PIB",
+    "Dólar"
+   ],
+   "publicado_em": "2026-11-09T13:26:00+00:00",
+   "palavras": 478,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+   "fonte_id": "agencia-brasil",
+   "guid": "1708155 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Gás do Povo: governo prorroga vigência do auxílio até 2031",
+   "veiculo": "Agência Brasil",
+   "autor": "Paula Laboissière – Repórter da Agência Brasil",
+   "editoria": "economia",
+   "tags": [
+    "Economia",
+    "Gás do Povo",
+    "auxílio",
+    "botijão",
+    "gás de cozinha."
+   ],
+   "publicado_em": "2026-11-09T15:02:00+00:00",
+   "palavras": 359,
+   "excluida_motivo": null
+  },
+  {
+   "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-11/confira-o-calendario-de-pagamento-do-ipva-de-2027-em-sao-paulo",
+   "fonte_id": "agencia-brasil",
+   "guid": "1708160 at https://agenciabrasil.ebc.com.br",
+   "titulo": "Confira o calendário de pagamento do IPVA de 2027 em São Paulo",
+   "veiculo": "Agência Brasil",
+   "autor": "Matheus Crobelatti*",
+   "editoria": "economia",
+   "tags": [
+    "Economia",
+    "IPVA",
+    "São Paulo",
+    "governo do estado de São Paulo",
+    "imposto",
+    "veículo",
+    "automóveis"
+   ],
+   "publicado_em": "2026-11-09T15:57:00+00:00",
+   "palavras": 451,
+   "excluida_motivo": null
+  }
+ ],
+ "analises": [
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/derrota-de-trump-coloca-em-xeque-relacao-historica-dos-eua-com-israel",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:08:20.887000+00:00",
+   "paises": [
+    "ISR",
+    "USA"
+   ],
+   "temas": [
+    "geopolitica",
+    "politica"
+   ],
+   "resumo": "A derrota republicana nas eleições de meio de mandato e o corte da ajuda militar anunciado por Trump abalam a aliança entre Washington e Israel.",
+   "fato": {
+    "texto": "No dia da eleição, Trump anunciou o fim da ajuda militar a Israel, estimada em US$ 3,8 bilhões por ano e antes prevista até 2028.",
+    "citacoes": [
+     {
+      "trecho": "anunciou, para surpresa dos aliados em Israel, o fim da ajuda militar ao país estimada em US$ 3,8 bilhões, ao ano"
+     },
+     {
+      "trecho": "prevista anteriormente para continuar até 2028"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "Para o professor Bruno Huberman (PUC-SP), a suspensão reflete uma mudança na relação bilateral; o vice JD Vance citou a relação com Israel entre os motivos da derrota.",
+    "citacoes": [
+     {
+      "trecho": "a decisão de Trump de suspender o repasse é resultado de uma mudança nas relações bilaterais entre Washington e Tel Aviv"
+     },
+     {
+      "trecho": "a relação do país com Israel foi um dos quatro principais motivos"
+     }
+    ]
+   },
+   "impacto": null,
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": [
+     "sem impacto (sem base no texto)"
+    ]
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-quer-economia-arrumada-para-atrair-investimentos",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:08:16.902000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia",
+    "politica"
+   ],
+   "resumo": "Em encontro sobre minerais estratégicos, o presidente pediu contas organizadas e regras previsíveis para atrair capital estrangeiro.",
+   "fato": {
+    "texto": "Em reunião sobre minerais críticos na quinta-feira (5), Lula defendeu uma “economia arrumada” e responsabilidade jurídica e fiscal para atrair investimentos.",
+    "citacoes": [
+     {
+      "trecho": "o Brasil precisa ter uma “economia arrumada” para atrair novos investimentos"
+     },
+     {
+      "trecho": "o Brasil precisa ter responsabilidade jurídica e fiscal"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "A reportagem lê a fala como sinal ao mercado de uma política econômica austera, enquanto o presidente também exaltava o eleitorado que o reelegeu.",
+    "citacoes": [
+     {
+      "trecho": "fez um aceno ao mercado financeiro, indicando uma política econômica austera e com equilíbrio nas contas públicas"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "Para terras raras e minerais críticos, o presidente disse buscar parcerias com outros países, sem o Estado como explorador exclusivo.",
+    "citacoes": [
+     {
+      "trecho": "Precisamos construir com outros países que queiram participar conosco do processo de transformação e exploração dessa riqueza"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-vai-criar-ministerio-da-seguranca-publica-com-medida-provisoria",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:08:11.710000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "politica"
+   ],
+   "resumo": "O presidente anunciou que vai propor por medida provisória a criação de um ministério dedicado à segurança pública.",
+   "fato": {
+    "texto": "Lula disse em live que criará o Ministério da Segurança Pública por medida provisória, depois que o Senado aprovou a PEC da Segurança Pública por 73 votos.",
+    "citacoes": [
+     {
+      "trecho": "vai criar o Ministério da Segurança Pública por meio de uma Medida Provisória (MP)"
+     },
+     {
+      "trecho": "E foi aprovada por 73 votos"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "Segundo a reportagem, a ideia ganhou força na campanha e tem como objetivo intensificar o enfrentamento das facções criminosas.",
+    "citacoes": [
+     {
+      "trecho": "ela ganhou força durante a campanha eleitoral"
+     },
+     {
+      "trecho": "A criação do ministério é para ampliar o combate às ações das organizações criminosas"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "A nova pasta ficaria encarregada de coordenar, junto a estados e prefeituras, as políticas nacionais do setor.",
+    "citacoes": [
+     {
+      "trecho": "coordenar, em articulação com estados e municípios, a execução das políticas nacionais de segurança pública"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/ibge-confirma-crescimento-de-34-da-economia-em-2024",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:08:05.552000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia"
+   ],
+   "resumo": "A revisão anual das contas nacionais manteve em 3,4% o crescimento da economia brasileira em 2024.",
+   "fato": {
+    "texto": "O IBGE confirmou, na revisão das Contas Nacionais, que o PIB do Brasil cresceu 3,4% em 2024, somando R$ 11,7 trilhões.",
+    "citacoes": [
+     {
+      "trecho": "confirmam que a economia brasileira cresceu 3,4% em 2024"
+     },
+     {
+      "trecho": "chegou a R$ 11,7 trilhões"
+     }
+    ]
+   },
+   "interpretacao": null,
+   "impacto": null,
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": [
+     "sem interpretação (sem base no texto)",
+     "sem impacto (sem base no texto)"
+    ]
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/eleitores-dos-eua-derrotam-big-techs-e-acoes-de-ia-despencam",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:08:01.430000+00:00",
+   "paises": [
+    "USA"
+   ],
+   "temas": [
+    "economia",
+    "politica"
+   ],
+   "resumo": "Eleitores americanos rejeitaram em massa projetos de centros de dados em consultas locais, e o partido do presidente perdeu o controle do Congresso; ações de tecnologia caíram.",
+   "fato": {
+    "texto": "Nas eleições de meio de mandato, 40 de 41 plebiscitos locais nos EUA rejeitaram projetos de data centers, e o partido de Trump perdeu a maioria na Câmara e no Senado.",
+    "citacoes": [
+     {
+      "trecho": "Dos 41 plebiscitos locais realizados em dez estados"
+     },
+     {
+      "trecho": "40 terminaram com a rejeição popular aos projetos das big techs"
+     },
+     {
+      "trecho": "perdeu as maiorias na Câmara e no Senado"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "Segundo a reportagem, o temor diante da inteligência artificial pesou no voto: na boca de urna, 57% disseram que a IA fará mais mal que bem.",
+    "citacoes": [
+     {
+      "trecho": "também foi influenciada pelo temor da maioria da sociedade estadunidense em relação ao avanço da inteligência artificial (IA)"
+     },
+     {
+      "trecho": "57% acreditam que a IA fará mais mal que bem à sociedade"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "Bolsas pelo mundo recuaram com a queda de papéis de tecnologia; o índice Nasdaq Composite caía 5,5% na sexta-feira (6).",
+    "citacoes": [
+     {
+      "trecho": "as bolsas do mercado de ações em todo o mundo estão operando em queda"
+     },
+     {
+      "trecho": "registram uma baixa de 5,5% nesta sexta-feira (6)"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/cnpe-cria-grupo-para-elaborar-estrategia-nacional-de-eletromobilidade",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "rejeitada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:07:57.039000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia"
+   ],
+   "resumo": "[não publicado]",
+   "fato": {
+    "texto": "[não publicado]",
+    "citacoes": []
+   },
+   "interpretacao": null,
+   "impacto": null,
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-quer-levar-brasil-condicao-de-pais-desenvolvido-em-quatro-anos",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:07:47.967000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia",
+    "politica"
+   ],
+   "resumo": "Em reunião do conselho de política energética, o presidente disse querer que o Brasil alcance o status de país desenvolvido até o fim do novo mandato.",
+   "fato": {
+    "texto": "Em reunião do CNPE na sexta-feira (6), Lula disse querer tornar o Brasil um país desenvolvido em quatro anos, citando energia renovável, minerais críticos e terras raras.",
+    "citacoes": [
+     {
+      "trecho": "Eu quero, em apenas quatro anos, tirar o Brasil do estágio de país em desenvolvimento e colocá-lo no estágio de país desenvolvido"
+     },
+     {
+      "trecho": "especialmente nas áreas de energia renovável, minerais críticos e terras raras"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "O presidente apresenta essas áreas como trunfos para atrair capital produtivo ao país.",
+    "citacoes": [
+     {
+      "trecho": "representam fatores de atração para investimentos produtivos"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "O governo quer atrair centros de dados, mas exigirá que gerem a própria energia que consomem.",
+    "citacoes": [
+     {
+      "trecho": "exigirá que os empreendimentos produzam a própria energia consumida"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/balanca-comercial-tem-maior-superavit-para-outubro-desde-1989",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aguardando_revisao",
+   "erros": [
+    "fato_incorreto"
+   ],
+   "revisado_em": "2026-11-10T13:07:39.976000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia"
+   ],
+   "resumo": "[não publicado]",
+   "fato": {
+    "texto": "[não publicado]",
+    "citacoes": []
+   },
+   "interpretacao": null,
+   "impacto": null,
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": [
+     "sem impacto (sem base no texto)"
+    ]
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/brasil-tem-maior-juro-real-do-mundo-seguido-por-turquia-e-argentina",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:07:33.103000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia"
+   ],
+   "resumo": "Levantamento de consultoria coloca o Brasil no topo do ranking global de juros descontada a inflação, depois que o Banco Central interrompeu os cortes da Selic.",
+   "fato": {
+    "texto": "Ranking da consultoria Moneyou aponta o Brasil com o maior juro real entre 40 países, 9,05%, à frente de Turquia (7,77%) e Argentina (6,80%).",
+    "citacoes": [
+     {
+      "trecho": "O Brasil segue como o país com os maiores juros reais do mundo, calculados em 9,05%"
+     },
+     {
+      "trecho": "Brasil (9,05%) Turquia (7,77%), Argentina (6,80%)"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "A indústria critica a decisão de manter a Selic em 13,75%; o Banco Central alega incertezas maiores e expectativas de inflação acima da meta.",
+    "citacoes": [
+     {
+      "trecho": "a manutenção dos juros pelo Copom é “injustificável”"
+     },
+     {
+      "trecho": "as incertezas se ampliaram nas últimas semanas e que as expectativas de inflação continuam acima da meta"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "Segundo a Confederação Nacional da Indústria, juros nesse patamar encarecem a vida de empresas e famílias.",
+    "citacoes": [
+     {
+      "trecho": "custa caro para empresas e famílias"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/sem-posicao-do-senado-regras-sobre-flavio-seguem-indefinidas",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "rejeitada",
+   "erros": [
+    "fato_incorreto"
+   ],
+   "revisado_em": "2026-11-10T13:07:25.781000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "politica"
+   ],
+   "resumo": "[não publicado]",
+   "fato": {
+    "texto": "[não publicado]",
+    "citacoes": []
+   },
+   "interpretacao": null,
+   "impacto": null,
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-sanciona-exame-que-ira-avaliar-qualidade-de-alunos-de-medicina",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:07:18.990000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "politica"
+   ],
+   "resumo": "Nova lei torna obrigatória uma prova nacional ao longo do curso de medicina, que passa a ser exigida para exercer a profissão.",
+   "fato": {
+    "texto": "Lula sancionou a lei que torna obrigatório o Enamed, aplicado no segundo, quarto e sexto anos do curso, e que passa a ser condição para exercer a medicina.",
+    "citacoes": [
+     {
+      "trecho": "sancionou nesta sexta-feira (6) a lei que torna o Exame Nacional de Avaliação da Formação Médica (Enamed)"
+     },
+     {
+      "trecho": "o Enamed passa a ser condição para o exercício da medicina"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "Na avaliação do presidente, médicos mais bem formados devem melhorar o atendimento de saúde, inclusive no sistema público.",
+    "citacoes": [
+     {
+      "trecho": "Para Lula, a medida vai melhorar a qualidade do atendimento de saúde para a população brasileira"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "A exigência vale para quem entrou em medicina a partir de 19 de junho de 2026; estudantes já matriculados seguem as regras antigas.",
+    "citacoes": [
+     {
+      "trecho": "A exigência será aplicada aos estudantes que ingressaram nos cursos de medicina a partir de 19 de junho de 2026"
+     },
+     {
+      "trecho": "Quem já estava matriculado antes dessa data continuará submetido às regras anteriores"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/lula-vai-filipinas-buscando-estreitar-vinculo-com-bloco-asiatico",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:07:13.870000+00:00",
+   "paises": [
+    "BRA",
+    "PHL"
+   ],
+   "temas": [
+    "geopolitica"
+   ],
+   "resumo": "O presidente vai a Manila como convidado da cúpula do bloco do Sudeste Asiático, enquanto o Brasil tenta subir de nível na parceria com a Asean.",
+   "fato": {
+    "texto": "Lula participará como convidado da Cúpula da Asean em Manila, em 15 de novembro. Em janeiro, o Brasil pediu para passar a Parceiro de Diálogo do bloco.",
+    "citacoes": [
+     {
+      "trecho": "Ele participará como convidado da Cúpula da Associação de Nações do Sudeste Asiático (Asean), no dia 15 de novembro"
+     },
+     {
+      "trecho": "o Brasil formalizou o pedido de elevar seu relacionamento com o bloco"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "O Itamaraty vê o convite, repetido pelo segundo ano, e a possibilidade de discursar na abertura como sinais de prestígio do Brasil junto ao bloco.",
+    "citacoes": [
+     {
+      "trecho": "visto pela diplomacia brasileira como um sinal de respeito ao Brasil"
+     },
+     {
+      "trecho": "O convite feito a Lula, pelo segundo ano consecutivo, também demonstra o respeito do bloco ao Brasil"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "Se o pedido for aceito, o Brasil entra no grupo que reúne Canadá, Coreia do Sul, EUA e Japão; o comércio com a Asean chegou a US$ 38 bilhões em 2025.",
+    "citacoes": [
+     {
+      "trecho": "o Brasil entrará em uma lista da qual fazem parte Canadá, Coreia do Sul, Estados Unidos, Japão"
+     },
+     {
+      "trecho": "passando de US$ 3 bilhões para US$ 38 bilhões"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/cartorios-fazem-mutirao-para-prevenir-golpes-na-compra-de-imoveis",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:07:09.438000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia"
+   ],
+   "resumo": "Tabeliães foram a praças e shoppings em várias cidades para orientar a população sobre como evitar fraudes na compra de imóveis.",
+   "fato": {
+    "texto": "Cartórios de Notas fizeram um mutirão nacional gratuito no sábado (7) para orientar compradores de imóveis sobre golpes, em ação do Colégio Notarial do Brasil.",
+    "citacoes": [
+     {
+      "trecho": "os Cartórios de Notas realizam neste sábado (7) um mutirão nacional gratuito em várias cidades do país"
+     },
+     {
+      "trecho": "A iniciativa é promovida pelo Colégio Notarial do Brasil – Conselho Federal (CNB/CF)"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "Para o presidente da entidade, orientar antes da compra evita que negócios imobiliários terminem na Justiça.",
+    "citacoes": [
+     {
+      "trecho": "a orientação preventiva é fundamental para evitar que decisões patrimoniais se transformem em disputas judiciais"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "Entre os golpes citados estão vendas feitas por falsos donos e procurações falsas; muitas vezes a vítima só percebe depois de pagar.",
+    "citacoes": [
+     {
+      "trecho": "Apresentação de procurações falsas"
+     },
+     {
+      "trecho": "o comprador só identifica o problema depois de transferir recursos"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/vr-e-va-podem-ser-aceitos-em-mais-maquininhas-partir-deste-sabado",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "rejeitada",
+   "erros": [
+    "fato_incorreto"
+   ],
+   "revisado_em": "2026-11-10T13:07:00.253000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia"
+   ],
+   "resumo": "[não publicado]",
+   "fato": {
+    "texto": "[não publicado]",
+    "citacoes": []
+   },
+   "interpretacao": null,
+   "impacto": null,
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/pf-investiga-ameacas-recebidas-pela-deputada-eleita-ana-elisa",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:00:40.369000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "politica"
+   ],
+   "resumo": "A Polícia Federal apura ameaças de morte e mensagens racistas contra uma deputada federal eleita por Minas Gerais e pode recorrer a cooperação policial internacional.",
+   "fato": {
+    "texto": "A PF informou que investiga ameaças recebidas pela deputada federal eleita Ana Elisa Santos Silva (PT-MG). O caso está com a delegacia de Divinópolis e pode envolver pedidos de cooperação internacional.",
+    "citacoes": [
+     {
+      "trecho": "A Polícia Federal informou, neste domingo (8), que investiga ameaças divulgadas pela deputada federal eleita Ana Elisa Santos Silva"
+     },
+     {
+      "trecho": "O caso é apurado pela Delegacia de Polícia Federal em Divinópolis, Minas Gerais"
+     },
+     {
+      "trecho": "pedidos de cooperação policial internacional"
+     }
+    ]
+   },
+   "interpretacao": null,
+   "impacto": null,
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": [
+     "sem interpretação (sem base no texto)",
+     "sem impacto (sem base no texto)"
+    ]
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/movimentacoes-no-senado-antecipam-disputa-pelo-comando-da-casa-em-2027",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:00:35.583000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "politica"
+   ],
+   "resumo": "Fortalecida nas urnas, a oposição se organiza para disputar a presidência do Senado contra a provável recandidatura de Davi Alcolumbre, apoiado pelo governo.",
+   "fato": {
+    "texto": "O PL lançou Rogério Marinho à presidência do Senado, e a senadora Tereza Cristina também se declara candidata; Davi Alcolumbre, apoiado pelo governo, ainda não formalizou a candidatura.",
+    "citacoes": [
+     {
+      "trecho": "o PL lançou oficialmente a candidatura do atual líder da oposição no Senado, Rogério Marinho (PL-RN)"
+     },
+     {
+      "trecho": "Minha candidatura está posta e é para valer"
+     },
+     {
+      "trecho": "Davi Alcolumbre não anunciou ainda formalmente a sua candidatura"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "Segundo a reportagem, o resultado eleitoral reforçou a oposição na Casa; os dois nomes da direita afirmam que vão se unir em torno de um só candidato para não dividir votos.",
+    "citacoes": [
+     {
+      "trecho": "O resultado das urnas fortaleceu o campo oposicionista no Senado"
+     },
+     {
+      "trecho": "No momento oportuno, pelo acerto entre nós, vamos convergir"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "A escolha do comando do Senado e da Câmara acontece em 1º de fevereiro, no dia da posse, e o PL terá a maior bancada nas duas Casas.",
+    "citacoes": [
+     {
+      "trecho": "A eleição para o comando do Senado ocorre no mesmo dia da posse, em 1º de fevereiro"
+     },
+     {
+      "trecho": "que terá a maior bancada, com 29 integrantes"
+     },
+     {
+      "trecho": "terá a maior bancada da Casa, com 121 deputados"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-busca-conciliacao-e-se-compromete-com-responsabilidade-fiscal",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:00:30.823000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia",
+    "politica"
+   ],
+   "resumo": "Em discurso após a reeleição, o presidente defendeu equilíbrio das contas, prometeu criar condições para juros menores e anunciou propostas para segurança pública e reforma do Judiciário.",
+   "fato": {
+    "texto": "Em pronunciamento no domingo (8), Lula agradeceu os votos, reafirmou compromisso com a responsabilidade fiscal e disse que o governo buscará elevar o investimento a 20% do PIB.",
+    "citacoes": [
+     {
+      "trecho": "Reafirmo meu compromisso com a responsabilidade fiscal"
+     },
+     {
+      "trecho": "que o governo buscará elevar para 20% do Produto Interno Bruto (PIB)"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "A reportagem descreve um tom conciliatório, ao lado de críticas às big techs pela atuação na eleição e de uma referência indireta ao adversário derrotado.",
+    "citacoes": [
+     {
+      "trecho": "afirmou em tom conciliatório"
+     },
+     {
+      "trecho": "criticou as Big Techs por terem propagado conteúdos repletos de informações falsas"
+     },
+     {
+      "trecho": "em alusão curta, porém clara, a seu adversário no último pleito"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "Entre as medidas de curto prazo anunciadas estão acabar com o imposto sobre a cesta básica e enviar ao Congresso proposta de transporte público gratuito nos fins de semana.",
+    "citacoes": [
+     {
+      "trecho": "medidas como a extinção do imposto dos produtos da cesta básica"
+     },
+     {
+      "trecho": "proposta para zerar a tarifa do transporte público aos finais de semana"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-da-selic-para-1375-em-2026",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:00:22.751000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia"
+   ],
+   "resumo": "Analistas consultados pelo Banco Central passaram a esperar que os juros fechem 2026 no patamar atual e cortaram levemente a previsão de crescimento.",
+   "fato": {
+    "texto": "O Boletim Focus mostrou que o mercado subiu de 13,5% para 13,75% a projeção da Selic no fim de 2026, igual à taxa atual; a previsão de IPCA para 2026 ficou em 5,22%.",
+    "citacoes": [
+     {
+      "trecho": "elevou de 13,5% para 13,75% ao ano a projeção para a taxa básica de juros (Selic) ao final de 2026"
+     },
+     {
+      "trecho": "A estimativa para o Índice Nacional de Preços ao Consumidor Amplo (IPCA) permaneceu em 5,22% para 2026"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "Segundo a reportagem, é comum a projeção convergir para a taxa vigente no fim do ano; o Banco Central justifica a cautela com expectativas de inflação ainda acima da meta.",
+    "citacoes": [
+     {
+      "trecho": "A aproximação entre a projeção para o fechamento do ano e a Selic em vigor é comum nos meses finais do calendário"
+     },
+     {
+      "trecho": "as expectativas de inflação seguem acima da meta e que o cenário exige cautela"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "Juros nesse nível tendem a frear a atividade: a estimativa de crescimento do PIB em 2026 recuou de 1,76% para 1,75%.",
+    "citacoes": [
+     {
+      "trecho": "juros mais elevados dificultam a expansão da atividade econômica"
+     },
+     {
+      "trecho": "em 2026 caiu de 1,76% para 1,75%"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/gas-do-povo-governo-prorroga-vigencia-do-programa-ate-2031",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T13:00:16.407000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia"
+   ],
+   "resumo": "Medida provisória estende até 2031 o programa federal que ajuda famílias de baixa renda a comprar gás de cozinha.",
+   "fato": {
+    "texto": "O governo federal publicou medida provisória que estende até 19 de novembro de 2031 o auxílio Gás do Povo, que hoje atende cerca de 15 milhões de famílias, segundo a Secom.",
+    "citacoes": [
+     {
+      "trecho": "medida provisória que prorroga até 19 de novembro de 2031 a vigência do auxílio Gás do Povo"
+     },
+     {
+      "trecho": "atualmente, atende cerca de 15 milhões de famílias"
+     }
+    ]
+   },
+   "interpretacao": {
+    "texto": "Na avaliação do próprio governo, a prorrogação responde ao peso do botijão no orçamento das famílias mais pobres e funciona como política contra a pobreza energética.",
+    "citacoes": [
+     {
+      "trecho": "política pública voltada ao enfrentamento da pobreza energética"
+     },
+     {
+      "trecho": "a medida considera o peso do gás liquefeito de petróleo (GLP) no orçamento doméstico das famílias mais vulneráveis"
+     }
+    ]
+   },
+   "impacto": {
+    "texto": "Na terça-feira (10) serão liberados 3,1 milhões de vales para recarga gratuita, 380,5 mil deles para novas famílias; o investimento informado passa de R$ 337 milhões.",
+    "citacoes": [
+     {
+      "trecho": "o programa vai disponibilizar 3,1 milhões de vales para recarga gratuita do botijão de gás de cozinha"
+     },
+     {
+      "trecho": "O investimento, de acordo com o governo federal, supera R$ 337 milhões"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": []
+   }
+  },
+  {
+   "noticia_url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-11/confira-o-calendario-de-pagamento-do-ipva-de-2027-em-sao-paulo",
+   "provedor": "agente-claude-code",
+   "modelo": "claude-opus-5-5",
+   "lote": "lote-20261109-170249",
+   "gerado_em": "2026-11-09T19:56:46.133323+00:00",
+   "status": "aprovada",
+   "erros": [],
+   "revisado_em": "2026-11-10T00:46:22.887000+00:00",
+   "paises": [
+    "BRA"
+   ],
+   "temas": [
+    "economia"
+   ],
+   "resumo": "O governo paulista publicou datas e condições para quitar o imposto sobre veículos em 2027, com abatimento para pagamento à vista em janeiro e parcelamento conforme o valor devido.",
+   "fato": {
+    "texto": "O Governo de São Paulo divulgou o calendário do IPVA 2027: pagamento à vista em janeiro com desconto de 3% ou parcelamento em até cinco cotas, a depender do valor do débito.",
+    "citacoes": [
+     {
+      "trecho": "divulgou nesta segunda-feira (9) o calendário de pagamento do Imposto sobre a Propriedade de Veículos Automotores (IPVA) de 2027"
+     },
+     {
+      "trecho": "quitar o imposto em cota única, com 3% de desconto"
+     }
+    ]
+   },
+   "interpretacao": null,
+   "impacto": {
+    "texto": "Os vencimentos começam em 11 de janeiro para placas de final 1; quem atrasar ou pagar parcialmente as parcelas perde o parcelamento e passa a pagar juros e multa.",
+    "citacoes": [
+     {
+      "trecho": "Os vencimentos da primeira cota começam em 11 de janeiro, para veículos com placa de final 1"
+     },
+     {
+      "trecho": "O atraso ou a quitação parcial das mensalidades seguintes acarreta o cancelamento imediato do parcelamento"
+     }
+    ]
+   },
+   "validacao": {
+    "ok": true,
+    "erros": [],
+    "avisos": [
+     "sem interpretação (sem base no texto)"
+    ]
+   }
+  }
+ ]
+}
