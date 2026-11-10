@@ -110,3 +110,23 @@
   text-align: right !important;
   font-variant-numeric: tabular-nums;
 }
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-1) var(--e-4);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--e-2);
+  font-size: var(--t-xs);
+}
+
+.legenda li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-1);
+}
+
+.semDado {
+  color: var(--texto-suave);
+}

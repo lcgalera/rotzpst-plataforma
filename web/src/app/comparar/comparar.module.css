@@ -1,0 +1,80 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--e-3) var(--e-4);
+  padding-block: var(--e-4);
+  border-top: var(--linha);
+  border-bottom: var(--linha);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  min-width: min(100%, 11rem);
+}
+
+.campo select {
+  padding: var(--e-2) var(--e-3);
+  border: 1px solid var(--cor-grafite);
+  border-radius: var(--raio);
+  background: var(--fundo);
+  font-weight: 400;
+}
+
+.opcional {
+  font-weight: 400;
+  color: var(--texto-suave);
+}
+
+.botao {
+  padding: var(--e-2) var(--e-4);
+  border: 1px solid var(--cor-grafite);
+  border-radius: var(--raio);
+  background: var(--cor-grafite);
+  color: var(--cor-papel);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--cor-papel);
+  color: var(--cor-grafite);
+}
+
+.escolhidos {
+  margin-block: var(--e-6);
+  font-size: var(--t-lg);
+}
+
+.escolhidos a {
+  color: var(--texto);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 28rem), 1fr));
+  gap: var(--e-12) var(--e-8);
+  margin-top: var(--e-6);
+}
+
+.indicador {
+  min-width: 0;
+}
+
+.titulo {
+  font-size: var(--t-lg);
+}
+
+.descricao {
+  font-size: var(--t-sm);
+  color: var(--texto-suave);
+  margin-bottom: var(--e-3);
+}
+
+.nomeCampo {
+  white-space: nowrap;
+}
