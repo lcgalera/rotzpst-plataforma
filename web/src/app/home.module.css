@@ -1,0 +1,144 @@
+.cenario {
+  padding-block: var(--e-12) var(--e-8);
+  border-bottom: var(--linha);
+}
+
+.manchete {
+  min-width: 0;
+}
+
+.tituloManchete {
+  font-size: var(--t-2xl);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-block: var(--e-2) var(--e-4);
+}
+
+.tituloManchete a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.tituloManchete a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.resumoManchete {
+  font-size: var(--t-lg);
+}
+
+.fatoManchete {
+  margin-top: var(--e-4);
+  padding-left: var(--e-3);
+  border-left: 2px solid var(--cor-linha);
+  color: var(--texto-suave);
+}
+
+.rotuloIa {
+  margin-top: var(--e-3);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}
+
+.lateral {
+  border-top: var(--linha);
+  padding-top: var(--e-4);
+  align-self: start;
+}
+
+@media (min-width: 64rem) {
+  .lateral {
+    grid-column: 9 / span 4;
+  }
+}
+
+.tituloLateral {
+  font-size: var(--t-lg);
+}
+
+.listaCenario {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--e-3);
+}
+
+.listaCenario li {
+  padding-block: var(--e-3);
+  border-bottom: var(--linha);
+}
+
+.itemCenario {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-base);
+  color: var(--texto);
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.itemCenario:hover {
+  text-decoration: underline;
+}
+
+.secao {
+  padding-block: var(--e-12);
+  border-bottom: var(--linha);
+}
+
+.tituloSecao {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  margin-bottom: var(--e-6);
+}
+
+.destaques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: var(--e-6);
+}
+
+.destaque {
+  border-top: var(--linha);
+  padding-top: var(--e-3);
+}
+
+.rotuloDestaque {
+  font-size: var(--t-sm);
+  font-weight: 500;
+}
+
+.valorDestaque {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-xl);
+  font-weight: 500;
+  margin-block: var(--e-2) var(--e-1);
+}
+
+.unidade {
+  margin-left: var(--e-1);
+  font-family: var(--fonte-corpo);
+  font-size: var(--t-sm);
+  color: var(--texto-suave);
+}
+
+.paisDestaque {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--e-2);
+  color: var(--texto);
+}
+
+.notaDestaque {
+  margin-top: var(--e-2);
+  font-size: var(--t-xs);
+  color: var(--texto-suave);
+}
+
+.cabecaMapa {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--e-2) var(--e-6);
+}
