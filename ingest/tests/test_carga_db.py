@@ -106,3 +106,55 @@ def test_falha_no_meio_nao_deixa_carga_pela_metade(base):
         )
     base.rollback()
     assert contar(base, "SELECT count(*) FROM series") == 0
+
+
+def test_importar_revisao_respeita_regras(base):
+    from jobs.importar_revisao import aplicar
+
+    with base.cursor() as cur:
+        cur.execute(
+            "INSERT INTO noticias (fonte_id, guid, url, titulo, veiculo, publicado_em, texto, palavras)"
+            " VALUES ('agencia-brasil', 'g1', 'https://exemplo.invalido/1', 'T', 'Agência Brasil', now(), 'x', 1)"
+            " RETURNING id"
+        )
+        nid = cur.fetchone()[0]
+        ids = []
+        for _ in range(3):
+            cur.execute(
+                "INSERT INTO analises (noticia_id, provedor, modelo, resumo, fato, validacao, status)"
+                " VALUES (%s, 'agente-claude-code', 'teste', 'r', '{}', '{}', 'rejeitada') RETURNING id",
+                (nid,),
+            )
+            ids.append(cur.fetchone()[0])
+        cur.execute("UPDATE analises SET status = 'aguardando_revisao' WHERE id = %s", (ids[0],))
+    base.commit()
+    r = aplicar(
+        base,
+        [
+            {
+                "analise_id": ids[0],
+                "decisao": "aprovada",
+                "erros": ["fato_incorreto", "inventada"],
+                "nota": None,
+            },
+            {
+                "analise_id": ids[1],
+                "decisao": "aprovada",
+                "erros": [],
+            },  # não estava pendente: ignora
+            {
+                "analise_id": ids[0],
+                "decisao": "rejeitada",
+                "erros": [],
+                "nota": "",
+            },  # rejeitar sem motivo: ignora
+        ],
+    )
+    assert r == {"aprovada": 1, "rejeitada": 0, "ignorada": 2}
+    assert (
+        contar(
+            base,
+            f"SELECT count(*) FROM analises WHERE id = {ids[0]} AND erros = '{{fato_incorreto}}'",
+        )
+        == 1
+    )
