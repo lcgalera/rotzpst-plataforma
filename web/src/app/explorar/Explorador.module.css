@@ -84,3 +84,16 @@
   margin-top: var(--e-6);
   font-weight: 500;
 }
+
+/* Mesmo tamanho do contêiner do globo (Globo.module.css): reserva o espaço enquanto carrega. */
+.caixaGlobo {
+  width: min(100%, 70vh);
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+}
+
+.caixaGlobo > * {
+  width: 100%;
+}

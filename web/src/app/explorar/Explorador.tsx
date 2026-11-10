@@ -69,13 +69,16 @@ export function Explorador({
         </div>
 
         {vista === "globo" ? (
-          <Suspense fallback={<Carregamento rotulo="Carregando o globo" frase={frase} />}>
-            {montado ? (
-              <GloboMapLibre paises={paises} selecionado={sel} onSelecionar={setSel} girando={girando} />
-            ) : (
-              <Carregamento rotulo="Carregando o globo" frase={frase} />
-            )}
-          </Suspense>
+          // A caixa tem o mesmo tamanho do globo desde o início: nada "pula" quando ele chega (CLS).
+          <div className={s.caixaGlobo}>
+            <Suspense fallback={<Carregamento rotulo="Carregando o globo" frase={frase} />}>
+              {montado ? (
+                <GloboMapLibre paises={paises} selecionado={sel} onSelecionar={setSel} girando={girando} />
+              ) : (
+                <Carregamento rotulo="Carregando o globo" frase={frase} />
+              )}
+            </Suspense>
+          </div>
         ) : (
           mapaPlano
         )}
