@@ -3,6 +3,8 @@ import "@/styles/tokens.css";
 import "@/styles/fonts.css";
 import "@/styles/base.css";
 import { Cabecalho, Rodape } from "@/components/site/Cabecalho";
+import { URL_SITE } from "@/lib/site";
+import { AnalyticsPrivado } from "./AnalyticsPrivado";
 import { PreloadFontes } from "./preload-fontes";
 
 export const metadata: Metadata = {
@@ -11,6 +13,9 @@ export const metadata: Metadata = {
     template: "%s · rotzx",
   },
   description: "Economia, geopolítica e inteligência global, com fonte e data em cada dado.",
+  metadataBase: new URL(URL_SITE),
+  openGraph: { siteName: "rotzx", locale: "pt_BR", type: "website" },
+  alternates: { canonical: "./" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -21,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Cabecalho />
         <div id="conteudo">{children}</div>
         <Rodape />
+        <AnalyticsPrivado />
       </body>
     </html>
   );

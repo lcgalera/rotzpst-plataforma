@@ -5,6 +5,7 @@ import { Carregamento } from "@/components/grafismo/Carregamento";
 import { NoticiaAnalise } from "@/components/noticias/NoticiaAnalise";
 import { listarPaises } from "@/lib/dados";
 import { noticiaPorId } from "@/lib/noticias";
+import { jsonLd, URL_SITE } from "@/lib/site";
 
 // Sem generateStaticParams: notícias chegam o tempo todo e a lista pode estar vazia no build
 // (com Cache Components, generateStaticParams não pode devolver lista vazia). Cada página é gerada
@@ -26,7 +27,26 @@ async function Conteudo({ params }: { params: PageProps<"/noticia/[id]">["params
     .map((iso) => paises.find((p) => p.iso3 === iso))
     .filter((p): p is NonNullable<typeof p> => !!p)
     .map(({ iso3, nome, slug }) => ({ iso3, nome, slug }));
-  return <NoticiaAnalise n={n} comoPagina paises={relacionados} />;
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: n.titulo,
+    abstract: n.resumo,
+    inLanguage: "pt-BR",
+    url: `${URL_SITE}/noticia/${n.id}`,
+    datePublished: n.revisadoEm ?? n.publicadoEm,
+    isBasedOn: n.url,
+    sourceOrganization: { "@type": "Organization", name: n.veiculo },
+    publisher: { "@type": "Organization", name: "rotzx" },
+    about: relacionados.map((p) => ({ "@type": "Country", name: p.nome })),
+    creditText: "Resumo gerado por IA e revisado por uma pessoa, baseado só no texto original.",
+  };
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(ld) }} />
+      <NoticiaAnalise n={n} comoPagina paises={relacionados} />
+    </>
+  );
 }
 
 export default function PaginaNoticia(props: PageProps<"/noticia/[id]">) {

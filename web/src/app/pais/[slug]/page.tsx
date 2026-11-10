@@ -19,6 +19,7 @@ import {
   seriesDoPais,
 } from "@/lib/dados";
 import { type NoticiaPublicada, noticiasDoPais } from "@/lib/noticias";
+import { jsonLd, URL_SITE } from "@/lib/site";
 import s from "./pais.module.css";
 
 /** Ordem de leitura dos indicadores na página. */
@@ -210,8 +211,24 @@ async function Conteudo({ params }: { params: PageProps<"/pais/[slug]">["params"
       </EstadoVazio>
     );
 
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: `${pais.nome}: indicadores econômicos e sociais`,
+    description: `Séries anuais de ${series.map((x) => x.indicador.nome).join(", ")} para ${pais.iso3}, com fonte e data de atualização.`,
+    inLanguage: "pt-BR",
+    url: `${URL_SITE}/pais/${pais.slug}`,
+    spatialCoverage: { "@type": "Country", name: pais.nome },
+    variableMeasured: series.map((x) => x.indicador.nome),
+    isBasedOn: [...new Set(series.map((x) => x.fonte.url))],
+    license: [...new Set(series.map((x) => x.fonte.licencaUrl))],
+  };
+
   return (
     <>
+      {series.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(ld) }} />
+      )}
       <header className={`grade ${s.cabecalho}`}>
         <div className="col-8">
           <p className="rotulo">{pais.regiao ?? "País"}</p>
