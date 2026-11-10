@@ -38,6 +38,7 @@ export type Indicador = {
   descricao: string;
   notaMetodologica: string | null;
   fonteId: string;
+  codigoNaFonte: string;
 };
 
 export type PontoSerie = { periodo: number; valor: number };
@@ -102,7 +103,7 @@ export async function listarIndicadores(): Promise<Indicador[]> {
   "use cache";
   cacheLife("days");
   const linhas = await sql()`
-    SELECT codigo, nome_pt, unidade, categoria, descricao, nota_metodologica, fonte_id
+    SELECT codigo, nome_pt, unidade, categoria, descricao, nota_metodologica, fonte_id, codigo_na_fonte
     FROM indicadores ORDER BY codigo`;
   return linhas.map((r) => ({
     codigo: r.codigo,
@@ -112,6 +113,7 @@ export async function listarIndicadores(): Promise<Indicador[]> {
     descricao: r.descricao,
     notaMetodologica: r.nota_metodologica,
     fonteId: r.fonte_id,
+    codigoNaFonte: r.codigo_na_fonte,
   }));
 }
 
@@ -190,4 +192,59 @@ export async function ultimosValores(indicador: string): Promise<{
       null,
     ),
   };
+}
+
+export type Destaque = {
+  rotulo: string;
+  pais: Pais;
+  valor: number;
+  unidade: string;
+  periodo: number;
+  comparados: number; // quantos países do piloto entraram na comparação
+  fonte: Fonte;
+  atualizadoNaFonteEm: string | null;
+};
+
+/**
+ * Destaques calculados dos próprios dados (nada escrito à mão): o maior ou menor valor de um indicador
+ * entre os países do piloto, no ano mais recente com dado para pelo menos 80% deles.
+ */
+export async function destaquesPiloto(
+  pedidos: { indicador: string; ordem: "maior" | "menor"; rotulo: string }[],
+): Promise<Destaque[]> {
+  "use cache";
+  cacheLife("days");
+  const [paises, indicadores, fontes] = await Promise.all([
+    listarPaises(),
+    listarIndicadores(),
+    listarFontes(),
+  ]);
+  const piloto = paises.filter((p) => p.piloto);
+  const minimo = Math.ceil(piloto.length * 0.8);
+  const saida: Destaque[] = [];
+  for (const ped of pedidos) {
+    const ind = indicadores.find((i) => i.codigo === ped.indicador);
+    if (!ind) continue;
+    const [ano] = await sql()`
+      SELECT s.periodo, count(*)::int AS n FROM series s JOIN paises p ON p.iso3 = s.pais_iso3
+      WHERE p.piloto AND s.indicador_codigo = ${ped.indicador}
+      GROUP BY s.periodo HAVING count(*) >= ${minimo} ORDER BY s.periodo DESC LIMIT 1`;
+    if (!ano) continue;
+    const [linha] = await sql()`
+      SELECT s.pais_iso3, s.valor, s.fonte_id, to_char(s.atualizado_na_fonte_em, 'YYYY-MM-DD') AS atualizado
+      FROM series s JOIN paises p ON p.iso3 = s.pais_iso3
+      WHERE p.piloto AND s.indicador_codigo = ${ped.indicador} AND s.periodo = ${ano.periodo}
+      ORDER BY s.valor * ${ped.ordem === "maior" ? -1 : 1} LIMIT 1`;
+    saida.push({
+      rotulo: ped.rotulo,
+      pais: piloto.find((p) => p.iso3 === linha.pais_iso3)!,
+      valor: linha.valor,
+      unidade: ind.unidade,
+      periodo: ano.periodo,
+      comparados: ano.n,
+      fonte: fontes.find((f) => f.id === linha.fonte_id)!,
+      atualizadoNaFonteEm: linha.atualizado,
+    });
+  }
+  return saida;
 }
